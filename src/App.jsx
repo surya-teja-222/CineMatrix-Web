@@ -29,22 +29,22 @@ function App() {
           <div className="carousel" data-carousel>
             <ul data-slides>
               <li className="slide" data-active>
-                <img src={k} alt="Korean bg" />
+                <img src={k} alt="Korean bg" draggable="false" />
               </li>
               <li className="slide">
-                <img src={marvel} alt="Marvel bg" />
+                <img src={marvel} alt="Marvel bg" draggable="false" />
               </li>
               <li className="slide">
-                <img src={x} alt="Unknown bg" />
+                <img src={x} alt="Unknown bg" draggable="false" />
               </li>
               <li className="slide">
-                <img src={dc} alt="DC bg" />
+                <img src={dc} alt="DC bg" draggable="false" />
               </li>
             </ul>
           </div>
         </section>
       </div>
-      hiii
+      <div></div>
     </>
   );
 }
