@@ -12,6 +12,9 @@ module.exports = {
                 'mdm': { 'max': '1040px' },
                 'lgm': { 'max': '1440px' },
             },
+            fontFamily: {
+                'popins': ['Popins', 'sans-serif'],
+            },
         },
     },
     plugins: [],
