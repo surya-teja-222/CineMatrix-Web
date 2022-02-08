@@ -162,7 +162,7 @@ function App() {
         </div>
         <div className="flex h-[20%]  w-full flex-col  overflow-x-clip"></div>
       </div>
-      <div className="mdm:flex-col flex h-screen max-h-screen w-full">
+      <div className="mdm:flex-col flex  max-h-screen w-full">
         <div className="font-Poppins flex flex-col md:w-1/2">
           <h1 className="unselectable sp-t mdm:mt-4 mdm:text-center mdm:text-[28px] text-[42px] underline md:mx-16 md:mt-8">
             Features
@@ -174,17 +174,22 @@ function App() {
             alt=""
           />
         </div>
-        <div className="font-Dosis my-16 mx-24 flex  flex-col justify-center gap-8 font-bold md:w-1/2">
+        <div className="font-Dosis my-16 flex flex-col  justify-center gap-8 font-bold md:mx-24 md:w-1/2">
           <div className="top-container relative w-full">
             <div className="bgeffect animate-blob mdm:w-44 mdm:h-44 absolute top-0 -left-4   -z-50 h-96 w-96 rounded-full bg-purple-300 opacity-70  mix-blend-multiply blur-xl  filter"></div>
             <div className="bgeffect animate-blob animation-delay-2000 mdm:w-44 mdm:h-44 absolute top-0 -right-4   -z-50 h-96 w-96  rounded-full bg-yellow-300  opacity-70 mix-blend-multiply blur-xl filter"></div>
             <div className="bgeffect animate-blob animation-delay-4000 mdm:w-44 mdm:h-44 absolute -bottom-8 left-20   -z-50  h-96 w-96 rounded-full bg-pink-300  opacity-70 mix-blend-multiply blur-xl  filter"></div>
             <div className="top-container flex flex-col gap-4">
-              <div className="mdm:self-center mdm:w-fit flex w-[80%] gap-2 rounded-lg bg-white px-2 opacity-100 shadow-lg md:min-h-[200px]">
-                <div className="my-auto w-1/3">
-                  <img src={tech} alt="Technology used" />
+              <div className="mdm:self-center  smm:flex-col mdm:w-[80%] flex w-[80%] gap-2 rounded-lg bg-white px-2 opacity-100 shadow-lg md:min-h-[200px]">
+                <div className=" smm:self-center smm:w-[80%] my-auto sm:w-1/3">
+                  <img
+                    src={tech}
+                    className="unselectable"
+                    alt="Technology used"
+                    draggable="false"
+                  />
                 </div>
-                <div className="my-auto w-2/3">
+                <div className="smm-w[80%] my-auto sm:w-2/3">
                   <p className="mdm:text-sm p-4  text-lg">
                     Get Personalised recommendations based on what you watched
                     earlier. Our model always give you best suggestions. This is{" "}
@@ -194,11 +199,16 @@ function App() {
                   </p>
                 </div>
               </div>
-              <div className="mdm:self-center mdm:w-fit flex w-[80%] gap-2 rounded-lg bg-white px-2 opacity-100 shadow-lg md:min-h-[200px]">
-                <div className="my-auto w-1/3">
-                  <img src={scalability} alt="Technology used" className="p-4" />
+              <div className="mdm:self-center  smm:flex-col mdm:w-[80%] flex w-[80%] gap-2 rounded-lg bg-white px-2 opacity-100 shadow-lg md:min-h-[200px]">
+                <div className=" smm:self-center smm:w-[80%] my-auto sm:w-1/3">
+                  <img
+                    src={scalability}
+                    className="unselectable"
+                    alt="Technology used"
+                    draggable="false"
+                  />
                 </div>
-                <div className="my-auto w-2/3">
+                <div className="smm-w[80%] my-auto sm:w-2/3">
                   <p className="mdm:text-sm p-4  text-lg">
                     Get Personalised recommendations based on what you watched
                     earlier. Our model always give you best suggestions. This is{" "}
