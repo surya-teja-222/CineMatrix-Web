@@ -153,7 +153,7 @@ function App() {
           <Hero />
           <div className="flex w-full justify-center">
             <input
-              className="font-popins mdm:h-[60px] mdm:w-[90%] h-[45px] w-[40%] rounded-[17px] text-center text-lg font-bold outline-none"
+              className="font-popins mdm:h-[60px] mdm:w-[90%] mdm:text-sm h-[45px] w-[40%] rounded-[17px] text-center text-lg font-bold outline-none"
               placeholder="Search for a similar movie recommendation"
             />
           </div>
@@ -186,12 +186,12 @@ function App() {
           </p> */}
 
           <div className="top-container relative w-full">
-            <div className="bgeffect animate-blob absolute top-0 -left-4 -z-50 h-96   w-96 mdm:w-44 mdm:h-44 rounded-full bg-purple-300 opacity-70  mix-blend-multiply blur-xl  filter"></div>
-            <div className="bgeffect animate-blob animation-delay-2000 absolute top-0 -right-4 -z-50 h-96   w-96 mdm:w-44 mdm:h-44  rounded-full bg-yellow-300  opacity-70 mix-blend-multiply blur-xl filter"></div>
-            <div className="bgeffect animate-blob animation-delay-4000 absolute -bottom-8 left-20 -z-50 h-96   w-96  mdm:w-44 mdm:h-44 rounded-full bg-pink-300  opacity-70 mix-blend-multiply blur-xl  filter"></div>
+            <div className="bgeffect animate-blob mdm:w-44 mdm:h-44 absolute top-0 -left-4   -z-50 h-96 w-96 rounded-full bg-purple-300 opacity-70  mix-blend-multiply blur-xl  filter"></div>
+            <div className="bgeffect animate-blob animation-delay-2000 mdm:w-44 mdm:h-44 absolute top-0 -right-4   -z-50 h-96 w-96  rounded-full bg-yellow-300  opacity-70 mix-blend-multiply blur-xl filter"></div>
+            <div className="bgeffect animate-blob animation-delay-4000 mdm:w-44 mdm:h-44 absolute -bottom-8 left-20   -z-50  h-96 w-96 rounded-full bg-pink-300  opacity-70 mix-blend-multiply blur-xl  filter"></div>
             <div className="top-container flex flex-col gap-4">
-              <div className="h-[200px] w-[80%] rounded-lg bg-white shadow-lg opacity-100">
-                <p className="p-4 text-lg  mdm:text-sm">
+              <div className="mdm:self-center mdm:w-fit w-[80%] rounded-lg bg-white opacity-100 shadow-lg md:min-h-[200px]">
+                <p className="mdm:text-sm p-4  text-lg">
                   Get Personalised recommendations based on what you watched
                   earlier. Our model always give you best suggestions. This is{" "}
                   <b>
@@ -199,8 +199,8 @@ function App() {
                   </b>
                 </p>
               </div>
-              <div className="h-[200px] w-[80%] rounded-lg bg-white shadow-lg opacity-100">
-                <p className="p-4 text-lg mdm:text-sm">
+              <div className="mdm:self-center mdm:w-fit w-[80%] rounded-lg bg-white opacity-100 shadow-lg md:min-h-[200px]">
+                <p className="mdm:text-sm p-4 text-lg">
                   Get Personalised recommendations based on what you watched
                   earlier. Our model always give you best suggestions. This is{" "}
                   <b>
