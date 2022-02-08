@@ -1,11 +1,35 @@
 /* TAILWIND */
-
+@import-normalize;
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* FONT FAMILIES */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,600&display=swap");
+
+@font-face {
+  font-family: "blackops";
+  src: url(./assets/BlackOpsOne-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "hightide";
+  src: url(./assets/HighTide-Regular.ttf) format("truetype");
+}
+
+@layer utilities {
+  .transition-gen {
+    @apply transition-all duration-500 ease-in-out;
+  }
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
 
 *,
 *::before,
@@ -64,3 +88,11 @@ body {
   user-select: none;
 }
 
+.sp-t {
+  font-size: 72px;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

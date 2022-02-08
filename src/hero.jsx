@@ -6,6 +6,7 @@ export default function Hero() {
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 376.5 404.25"
         version="1.0"
+        className="h-3/4"
       >
         <defs>
           <filter
@@ -21,7 +22,7 @@ export default function Hero() {
           >
             <feColorMatrix
               values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             />
           </filter>
           <filter
@@ -37,7 +38,7 @@ export default function Hero() {
           >
             <feColorMatrix
               values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0.2126 0.7152 0.0722 0 0"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             />
           </filter>
           <clipPath id="c">
@@ -59,7 +60,7 @@ export default function Hero() {
             </g>
           </mask>
         </defs>
-        <g clip-path="url(#c)">
+        <g clipPath="url(#c)">
           <g mask="url(#d)">
             <g transform="matrix(.42 0 0 .41958 .1 0)">
               <image
