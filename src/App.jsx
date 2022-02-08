@@ -11,6 +11,8 @@ import bottomDesktop from "./assets/landing-bottom-desktop.png";
 import bottomMobile from "./assets/landing-bottom-mobile.svg";
 
 import binge from "./assets/binge.svg";
+import tech from "./assets/Technology.gif";
+import scalability from "./assets/scalability.svg";
 
 function App() {
   useEffect(() => {
@@ -161,7 +163,7 @@ function App() {
         <div className="flex h-[20%]  w-full flex-col  overflow-x-clip"></div>
       </div>
       <div className="mdm:flex-col flex h-screen max-h-screen w-full">
-        <div className="font-black-ops flex flex-col md:w-1/2">
+        <div className="font-Poppins flex flex-col md:w-1/2">
           <h1 className="unselectable sp-t mdm:mt-4 mdm:text-center mdm:text-[28px] text-[42px] underline md:mx-16 md:mt-8">
             Features
           </h1>
@@ -172,41 +174,39 @@ function App() {
             alt=""
           />
         </div>
-        <div className="font-hightide my-16 mx-24  flex flex-col justify-center gap-8 md:w-1/2">
-          {/* <p className="text-lg ">
-            Get Personalised recommendations based on what you watched earlier.
-            Our model always give you best suggestions. This is{" "}
-            <b>
-              <u>NOT ORIGINAL & sasi edit</u>
-            </b>
-          </p>
-          <p className="text-lg ">
-            Get Personalised recommendations based on what you watched earlier.
-            Our model always give you best suggestions.
-          </p> */}
-
+        <div className="font-Dosis my-16 mx-24 flex  flex-col justify-center gap-8 font-bold md:w-1/2">
           <div className="top-container relative w-full">
             <div className="bgeffect animate-blob mdm:w-44 mdm:h-44 absolute top-0 -left-4   -z-50 h-96 w-96 rounded-full bg-purple-300 opacity-70  mix-blend-multiply blur-xl  filter"></div>
             <div className="bgeffect animate-blob animation-delay-2000 mdm:w-44 mdm:h-44 absolute top-0 -right-4   -z-50 h-96 w-96  rounded-full bg-yellow-300  opacity-70 mix-blend-multiply blur-xl filter"></div>
             <div className="bgeffect animate-blob animation-delay-4000 mdm:w-44 mdm:h-44 absolute -bottom-8 left-20   -z-50  h-96 w-96 rounded-full bg-pink-300  opacity-70 mix-blend-multiply blur-xl  filter"></div>
             <div className="top-container flex flex-col gap-4">
-              <div className="mdm:self-center mdm:w-fit w-[80%] rounded-lg bg-white opacity-100 shadow-lg md:min-h-[200px]">
-                <p className="mdm:text-sm p-4  text-lg">
-                  Get Personalised recommendations based on what you watched
-                  earlier. Our model always give you best suggestions. This is{" "}
-                  <b>
-                    <u>NOT ORIGINAL & sasi edit</u>
-                  </b>
-                </p>
+              <div className="mdm:self-center mdm:w-fit flex w-[80%] gap-2 rounded-lg bg-white px-2 opacity-100 shadow-lg md:min-h-[200px]">
+                <div className="my-auto w-1/3">
+                  <img src={tech} alt="Technology used" />
+                </div>
+                <div className="my-auto w-2/3">
+                  <p className="mdm:text-sm p-4  text-lg">
+                    Get Personalised recommendations based on what you watched
+                    earlier. Our model always give you best suggestions. This is{" "}
+                    <b>
+                      <u>NOT ORIGINAL & sasi edit</u>
+                    </b>
+                  </p>
+                </div>
               </div>
-              <div className="mdm:self-center mdm:w-fit w-[80%] rounded-lg bg-white opacity-100 shadow-lg md:min-h-[200px]">
-                <p className="mdm:text-sm p-4 text-lg">
-                  Get Personalised recommendations based on what you watched
-                  earlier. Our model always give you best suggestions. This is{" "}
-                  <b>
-                    <u>NOT ORIGINAL & sasi edit</u>
-                  </b>
-                </p>
+              <div className="mdm:self-center mdm:w-fit flex w-[80%] gap-2 rounded-lg bg-white px-2 opacity-100 shadow-lg md:min-h-[200px]">
+                <div className="my-auto w-1/3">
+                  <img src={scalability} alt="Technology used" className="p-4" />
+                </div>
+                <div className="my-auto w-2/3">
+                  <p className="mdm:text-sm p-4  text-lg">
+                    Get Personalised recommendations based on what you watched
+                    earlier. Our model always give you best suggestions. This is{" "}
+                    <b>
+                      <u>NOT ORIGINAL & sasi edit</u>
+                    </b>
+                  </p>
+                </div>
               </div>
             </div>
           </div>

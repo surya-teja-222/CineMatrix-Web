@@ -13,9 +13,8 @@ module.exports = {
                 'lgm': { 'max': '1440px' },
             },
             fontFamily: {
-                'popins': ['Popins', 'sans-serif'],
-                'black-ops': ['blackops', 'sans-serif'],
-                'hightide': ['hightide', 'sans-serif'],
+                'Dosis': ['Dosis', 'sans-serif'],
+                'Poppins': ['Poppins', 'sans-serif'],
             },
             keyframes: {
                 'modal-in': {
