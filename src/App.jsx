@@ -1,20 +1,66 @@
+// react components
 import { useEffect } from "react";
+import { useState } from "react";
+
+// Images
 import dc from "./assets/dc.png";
 import k from "./assets/k.png";
 import marvel from "./assets/marvel.png";
 import x from "./assets/x1.png";
 import frozen from "./assets/frozen.png";
-
 import desktop from "./assets/logo/desktop.svg";
-import Hero from "./hero";
 import bottomDesktop from "./assets/landing-bottom-desktop.png";
 import bottomMobile from "./assets/landing-bottom-mobile.svg";
-
 import binge from "./assets/binge.svg";
 import tech from "./assets/Technology.gif";
 import scalability from "./assets/scalability.svg";
 
+// JSX COMPONENTS
+import Hero from "./hero";
+import Footer from "./components/Footer";
+import Main from "./components/main";
+
+// methods
+import fetchh from "./methods/fetchh";
+
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+
+  useEffect(() => {
+    document
+      .querySelector("#hero_input")
+      .addEventListener("keyup", async (e) => {
+        if (e.target.value.length > 0) {
+          document.getElementById("bottom_desktop").classList.add("opacity-0");
+          document.getElementById("bottom_mobile").classList.add("opacity-0");
+          var k = await fetchh(e.target.value);
+          if (k !== suggestions) {
+            setSuggestions(k);
+          }
+          if (e.keyCode === 13) {
+            setSearchTerm(e.target.value);
+            document.querySelector("#main_search").scrollIntoView({
+              behavior: "smooth",
+            });
+            document
+              .getElementById("bottom_desktop")
+              .classList.remove("opacity-0");
+            document
+              .getElementById("bottom_mobile")
+              .classList.remove("opacity-0");
+          }
+        } else {
+          document
+            .getElementById("bottom_desktop")
+            .classList.remove("opacity-0");
+          document
+            .getElementById("bottom_mobile")
+            .classList.remove("opacity-0");
+        }
+      });
+  }, []);
+
   useEffect(() => {
     function move() {
       setTimeout(() => {
@@ -35,7 +81,7 @@ function App() {
       }, 60000);
     }
     move();
-  });
+  }, []);
 
   return (
     <>
@@ -63,106 +109,129 @@ function App() {
         </section>
         <img
           src={bottomDesktop}
-          className="mdm:hidden absolute bottom-0 z-[90] w-full"
+          className="bottom_desktop mdm:hidden absolute bottom-0 z-[90] w-full transition-all duration-1000 ease-in-out"
           draggable="false"
           alt=""
+          id="bottom_desktop"
         />
         <img
           src={bottomMobile}
-          className="absolute bottom-0 z-[90] w-full md:hidden"
+          className="bottom_desktop absolute bottom-0 z-[90] w-full transition-all duration-1000 ease-in-out md:hidden"
           draggable="false"
           alt=""
+          id="bottom_mobile"
         />
       </div>
-      <div className="z-10 flex h-screen  flex-col justify-between  overflow-x-hidden">
-        <div className="mdm:px-2 flex h-[15%] w-full justify-between py-4 md:px-16">
-          <img
-            src={desktop}
-            alt="Logo CInematrixs"
-            draggable="false"
-            className="mdm:h-9 unselectable my-auto  h-[67px] w-[286px]"
-          />
-          <div className="font-popins mdm:hidden flex  gap-8 text-[24px] font-bold not-italic leading-[60px] text-[#ffffff]">
-            <p className="shad unselectable mt-auto cursor-pointer	 text-[#ffffffce] no-underline transition-all delay-300 duration-300 ease-in-out hover:text-white hover:underline">
-              JaxxTopia
-            </p>
-            <p className="shad unselectable mt-auto cursor-pointer	 text-[#ffffffce] no-underline transition-all delay-300 duration-300 ease-in-out hover:text-white hover:underline">
-              How it's made
-            </p>
-            <p className="shad unselectable mt-auto cursor-pointer 	 text-[#ffffffce] no-underline transition-all delay-300 duration-300 ease-in-out hover:text-white hover:underline">
-              About Us
-            </p>
-          </div>
-          <div className="md:hidden">
-            <div
-              id="nav-p"
-              className="transition-gen mx-4 my-4 flex h-12 w-12 flex-col justify-evenly "
-              onClick={() => {
-                document.getElementById("nav2").classList.toggle("opacity-0");
-                document.getElementById("nav-p").classList.toggle("rotate-180");
-                document.getElementById("nav1").classList.toggle("rotate-45");
-                document
-                  .getElementById("nav1")
-                  .classList.toggle("translate-y-[12px]");
-                document.getElementById("nav3").classList.toggle("-rotate-45");
-                document
-                  .getElementById("nav3")
-                  .classList.toggle("-translate-y-[12px]");
-                if (
+      <div className="z-10 flex h-screen  flex-col   overflow-x-hidden">
+        <header>
+          <div className="mdm:px-2 flex h-[15%] w-full justify-between py-4 md:px-16">
+            <img
+              src={desktop}
+              alt="Logo CInematrixs"
+              draggable="false"
+              className="mdm:h-9 unselectable my-auto  h-[67px] w-[286px]"
+            />
+            <div className="font-popins mdm:hidden flex  gap-8 text-[24px] font-bold not-italic leading-[60px] text-[#ffffff]">
+              <p className="shad unselectable mt-auto cursor-pointer	 text-[#ffffffce] no-underline transition-all delay-300 duration-300 ease-in-out hover:text-white hover:underline">
+                JaxxTopia
+              </p>
+              <p className="shad unselectable mt-auto cursor-pointer	 text-[#ffffffce] no-underline transition-all delay-300 duration-300 ease-in-out hover:text-white hover:underline">
+                How it's made
+              </p>
+              <p className="shad unselectable mt-auto cursor-pointer 	 text-[#ffffffce] no-underline transition-all delay-300 duration-300 ease-in-out hover:text-white hover:underline">
+                About Us
+              </p>
+            </div>
+            <div className="md:hidden">
+              <div
+                id="nav-p"
+                className="transition-gen mx-4 my-4 flex h-12 w-12 flex-col justify-evenly "
+                onClick={() => {
+                  document.getElementById("nav2").classList.toggle("opacity-0");
                   document
-                    .getElementById("mob-menu")
-                    .classList.contains("invisible")
-                ) {
+                    .getElementById("nav-p")
+                    .classList.toggle("rotate-180");
+                  document.getElementById("nav1").classList.toggle("rotate-45");
                   document
-                    .getElementById("mob-menu")
-                    .classList.toggle("animate-modal");
+                    .getElementById("nav1")
+                    .classList.toggle("translate-y-[12px]");
                   document
-                    .getElementById("mob-menu")
-                    .classList.toggle("invisible");
-                } else {
+                    .getElementById("nav3")
+                    .classList.toggle("-rotate-45");
                   document
-                    .getElementById("mob-menu")
-                    .classList.toggle("animate-modal-out");
-                  document
-                    .getElementById("mob-menu")
-                    .classList.toggle("invisible");
-                }
-              }}
-            >
-              <div id="nav1" className="transition-gen h-1 w-12 bg-white"></div>
-              <div id="nav2" className="transition-gen h-1 w-12 bg-white"></div>
-              <div id="nav3" className="transition-gen h-1 w-12 bg-white"></div>
+                    .getElementById("nav3")
+                    .classList.toggle("-translate-y-[12px]");
+                  if (
+                    document
+                      .getElementById("mob-menu")
+                      .classList.contains("invisible")
+                  ) {
+                    document
+                      .getElementById("mob-menu")
+                      .classList.toggle("animate-modal");
+                    document
+                      .getElementById("mob-menu")
+                      .classList.toggle("invisible");
+                  } else {
+                    document
+                      .getElementById("mob-menu")
+                      .classList.toggle("animate-modal-out");
+                    document
+                      .getElementById("mob-menu")
+                      .classList.toggle("invisible");
+                  }
+                }}
+              >
+                <div
+                  id="nav1"
+                  className="transition-gen h-1 w-12 bg-white"
+                ></div>
+                <div
+                  id="nav2"
+                  className="transition-gen h-1 w-12 bg-white"
+                ></div>
+                <div
+                  id="nav3"
+                  className="transition-gen h-1 w-12 bg-white"
+                ></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          id="mob-menu"
-          className=" invisible absolute  top-[15%] z-50  flex w-full justify-center  md:hidden"
-        >
-          <div className=" font-popins  min-h-40 flex  w-[80%]  flex-col gap-4 rounded-xl bg-slate-700 py-8 text-[24px] font-bold not-italic leading-[60px] text-[#ffffff]">
-            <p className=" unselectable mt-auto cursor-pointer  text-center	 text-[#ffffffce] no-underline   hover:text-white hover:underline">
-              JaxxTopia
-            </p>
-            <p className=" unselectable mt-auto cursor-pointer text-center	 text-[#ffffffce] no-underline  hover:text-white hover:underline">
-              How it's made
-            </p>
-            <p className=" unselectable mt-auto cursor-pointer  text-center	 text-[#ffffffce] no-underline  hover:text-white hover:underline">
-              About Us
-            </p>
+          <div
+            id="mob-menu"
+            className=" invisible absolute  top-[15%] z-50  flex w-full justify-center  md:hidden"
+          >
+            <div className=" font-popins  min-h-40 flex  w-[80%]  flex-col gap-4 rounded-xl bg-slate-700 py-8 text-[24px] font-bold not-italic leading-[60px] text-[#ffffff]">
+              <p className=" unselectable mt-auto cursor-pointer  text-center	 text-[#ffffffce] no-underline   hover:text-white hover:underline">
+                JaxxTopia
+              </p>
+              <p className=" unselectable mt-auto cursor-pointer text-center	 text-[#ffffffce] no-underline  hover:text-white hover:underline">
+                How it's made
+              </p>
+              <p className=" unselectable mt-auto cursor-pointer  text-center	 text-[#ffffffce] no-underline  hover:text-white hover:underline">
+                About Us
+              </p>
+            </div>
           </div>
-        </div>
+        </header>
         <div className="flex h-[60%]  w-full flex-col  overflow-x-clip ">
           <Hero />
           <div className="flex w-full justify-center">
             <input
               className="font-popins mdm:h-[60px] mdm:w-[90%] mdm:text-sm h-[45px] w-[40%] rounded-[17px] text-center text-lg font-bold outline-none"
               placeholder="Search for a similar movie recommendation"
+              id="hero_input"
             />
           </div>
+          <div
+            id="suggestions"
+            className="mdm:w-[90%] mx-4 flex h-48  max-h-48 w-[40%] flex-col  self-center rounded-lg pt-1"
+          >
+            {setInner(suggestions)}
+          </div>
         </div>
-        <div className="flex h-[20%]  w-full flex-col  overflow-x-clip"></div>
       </div>
-      <div className="mdm:flex-col flex  max-h-screen w-full">
+      <div className="mdm:flex-col flex  w-full">
         <div className="font-Poppins flex flex-col md:w-1/2">
           <h1 className="unselectable sp-t mdm:mt-4 mdm:text-center mdm:text-[28px] text-[42px] underline md:mx-16 md:mt-8">
             Features
@@ -175,17 +244,17 @@ function App() {
           />
         </div>
         <div className="font-Dosis my-16 flex flex-col  justify-center gap-8 font-bold md:mx-24 md:w-1/2">
-          <div className="top-container relative w-full">
+          <div className="top-container mdm:overflow-x-clip relative w-full">
             <div className="bgeffect animate-blob mdm:w-44 mdm:h-44 absolute top-0 -left-4   -z-50 h-96 w-96 rounded-full bg-purple-300 opacity-70  mix-blend-multiply blur-xl  filter"></div>
             <div className="bgeffect animate-blob animation-delay-2000 mdm:w-44 mdm:h-44 absolute top-0 -right-4   -z-50 h-96 w-96  rounded-full bg-yellow-300  opacity-70 mix-blend-multiply blur-xl filter"></div>
             <div className="bgeffect animate-blob animation-delay-4000 mdm:w-44 mdm:h-44 absolute -bottom-8 left-20   -z-50  h-96 w-96 rounded-full bg-pink-300  opacity-70 mix-blend-multiply blur-xl  filter"></div>
-            <div className="top-container flex flex-col gap-4">
-              <div className="mdm:self-center  smm:flex-col mdm:w-[80%] flex w-[80%] gap-2 rounded-lg bg-white px-2 opacity-100 shadow-lg md:min-h-[200px]">
+            <div className="top-container flex flex-col gap-4 ">
+              <div className="focus:animate-slide-fwd-center mdm:self-center  smm:flex-col mdm:w-[80%] flex w-[80%] gap-2 rounded-lg bg-white px-2 opacity-100 shadow-lg md:min-h-[200px]">
                 <div className=" smm:self-center smm:w-[80%] my-auto sm:w-1/3">
                   <img
                     src={tech}
                     className="unselectable"
-                    alt="Technology used"
+                    alt="Technology used 1"
                     draggable="false"
                   />
                 </div>
@@ -222,8 +291,111 @@ function App() {
           </div>
         </div>
       </div>
+
+      <div id="main_search" className="search h-screen w-full">
+        {/* normal  search bar , flex of (search part 1 , part 2) */}
+        <Main searchTerm={searchTerm} />
+      </div>
+
+      {/* <footer>
+        <Footer parentToChild={"data"} />
+      </footer> */}
     </>
   );
+  function setInner(suggestions) {
+    var array = [];
+    for (var i = 0; i < suggestions.length; i++) {
+      if (i === 0) {
+        array.push(
+          <div
+            key={i}
+            className="terms font-Poppins w-full cursor-pointer rounded-t-md bg-white text-center font-semibold text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
+            onClick={(e) => {
+              setSearchTerm(e.target.innerText);
+              document.querySelector("#main_search").scrollIntoView({
+                behavior: "smooth",
+              });
+              document
+                .getElementById("bottom_desktop")
+                .classList.remove("opacity-0");
+              document
+                .getElementById("bottom_mobile")
+                .classList.remove("opacity-0");
+            }}
+          >
+            {suggestions[i]}
+          </div>
+        );
+      } else if (i === suggestions.length - 1) {
+        array.push(
+          <div
+            key={i}
+            className="terms font-Poppins w-full cursor-pointer rounded-b-md bg-white text-center font-semibold capitalize text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
+            onClick={(e) => {
+              setSearchTerm(e.target.innerText);
+              document.querySelector("#main_search").scrollIntoView({
+                behavior: "smooth",
+              });
+              document
+                .getElementById("bottom_desktop")
+                .classList.remove("opacity-0");
+              document
+                .getElementById("bottom_mobile")
+                .classList.remove("opacity-0");
+            }}
+          >
+            {suggestions[i]}
+          </div>
+        );
+      } else {
+        array.push(
+          <div
+            key={i}
+            className="terms font-Poppins w-full cursor-pointer bg-white text-center font-semibold  capitalize text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
+            onClick={(e) => {
+              setSearchTerm(e.target.innerText);
+              document.querySelector("#main_search").scrollIntoView({
+                behavior: "smooth",
+              });
+              document
+                .getElementById("bottom_desktop")
+                .classList.remove("opacity-0");
+              document
+                .getElementById("bottom_mobile")
+                .classList.remove("opacity-0");
+            }}
+          >
+            {suggestions[i]}
+          </div>
+        );
+      }
+    }
+    if (array.length === 0) {
+      array.push(
+        <div
+          key={i}
+          className="terms font-Poppins w-full rounded-md  bg-white text-center font-semibold capitalize text-black transition-colors duration-100 ease-linear "
+        >
+          No matching results found...
+        </div>
+      );
+    }
+    return array;
+  }
+}
+
+function test(s) {
+  console.log(s);
 }
 
 export default App;
+
+/*
+MAIN PAGE
+FEATURES
+SEARCH PART
+ABOUT US
+RATEUS/CONTACT US
+SUPPORT US
+FOOTER
+*/

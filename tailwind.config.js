@@ -58,12 +58,21 @@ module.exports = {
                     "100%": {
                         transform: "translate(0px,0px) scale(1)"
                     },
+                },
+                'slide-fwd-center': {
+                    '0%': {
+                        transform: "translateZ(0)"
+                    },
+                    '100%': {
+                        transform: "translateZ(160)"
+                    }
                 }
             },
             animation: {
                 'modal': 'modal-in 0.3s ease-in-out ',
                 'modal-out': 'modal-out 0.3s ease-in-out ',
-                'blob': 'blob 5s infinite'
+                'blob': 'blob 5s infinite',
+                'slide-fwd-center': 'slide-fwd-center 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both'
             },
         },
     },
