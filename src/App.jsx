@@ -297,14 +297,14 @@ function App() {
         </div>
       </div>
 
-      <div id="main_search" className="search h-screen w-full">
-        {/* normal  search bar , flex of (search part 1 , part 2) */}
-        <Main searchTerm={searchTerm} />
-      </div>
+      {/* <div id="main_search" className="search h-screen w-full"> */}
+      {/* normal  search bar , flex of (search part 1 , part 2) */}
+      {/* <Main searchTerm={searchTerm} />
+      </div> */}
 
-      {/* <footer>
-        <Footer parentToChild={"data"} />
-      </footer> */}
+      <footer>
+        <Footer/>
+      </footer>
     </>
   );
   function setInner(suggestions) {
