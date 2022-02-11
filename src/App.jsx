@@ -35,7 +35,7 @@ function App() {
           document.getElementById("bottom_desktop").classList.add("opacity-0");
           document.getElementById("bottom_mobile").classList.add("opacity-0");
           var k = await fetchh(e.target.value);
-          if (k !== suggestions) {
+          if (k !== suggestions && k.length > 0) {
             setSuggestions(k);
           }
           if (e.keyCode === 13) {
@@ -59,6 +59,11 @@ function App() {
             .classList.remove("opacity-0");
         }
       });
+  }, []);
+
+  useEffect(() => {
+    k = process.env.REACT_APP_URL + "?movie=test";
+    var k = fetch(k);
   }, []);
 
   useEffect(() => {

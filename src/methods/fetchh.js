@@ -1,5 +1,6 @@
 async function fetchh(input) {
-    var k = await fetch('https://cinematrix.azurewebsites.net/api/getmovies/?movie=' + input)
+    k = process.env.REACT_APP_URL + '?movie=' + input
+    var k = await fetch(k)
     k = await k.json();
     return k;
 }
