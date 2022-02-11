@@ -6,20 +6,25 @@ export default function Footer() {
   return (
     <>
       <section>
-        <div className="grid-f bg-black">
-          <div className="mt-auto pt-4">
-            <img src={hero} alt="" className="h-3/4 w-3/4 " draggable="false" />
+        <div className="grid-f  bg-black">
+          <div className="mt-auto md:pt-4 mob-bot">
+            <img
+              src={hero}
+              alt=""
+              className="mdm:mx-auto h-3/4 w-3/4"
+              draggable="false"
+            />
           </div>
-          <div className="my-6 flex flex-col justify-between ">
+          <div className="md:my-6 flex flex-col md:justify-between mdm:gap-16 mdm:mt-8">
             <img
               src={logo}
               alt="logo"
-              className="test mx-auto w-1/2 p-4"
+              className="test  mx-auto w-1/2 md:p-4"
               draggable="false"
             />
             <div className="font-Poppins footer-b flex flex-col  self-center font-bold leading-[38px]">
               <div className="flex self-center ">
-                <p className="unselectable text-white">
+                <p className="unselectable text-white text-center">
                   Made with love <span className="test">💖</span> by{" "}
                   <span className="test cursor-pointer text-[#FF1516] hover:underline">
                     Team CineMatrix
@@ -27,7 +32,7 @@ export default function Footer() {
                 </p>
               </div>
               <div className="flex self-center">
-                <p className="unselectable  text-[#827F7F]">
+                <p className="unselectable  text-[#827F7F] text-center">
                   Developed by{" "}
                   <span className="test cursor-pointer text-[#FF1516] hover:underline">
                     Surya
@@ -39,7 +44,7 @@ export default function Footer() {
                 </p>
               </div>
               <div className="flex self-center">
-                <p className="unselectable text-[#827F7F]">
+                <p className="unselectable text-[#827F7F] text-center">
                   Designed by{" "}
                   <span className="test cursor-pointer text-[#FF1516] hover:underline">
                     Harsha
@@ -47,7 +52,7 @@ export default function Footer() {
                 </p>
               </div>
               <div className="flex self-center">
-                <p className="unselectable text-white">
+                <p className="unselectable text-white text-center">
                   &#9400; Copyright{" "}
                   <span className="test cursor-pointer text-[#FF1516] hover:underline">
                     CineMatrix
@@ -57,7 +62,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="font-Poppins my-6 flex flex-col justify-center gap-4 text-2xl font-bold">
+          <div className="font-Poppins mdm:mt-6 md:my-6 flex flex-col justify-center gap-4 text-2xl font-bold">
             <h2 className="unselectable mx-auto text-white">Contact Us</h2>
             {/* <div className="mx-8 rounded-md bg-[#C4C4C499] p-4"></div> */}
             <input
@@ -88,6 +93,11 @@ export default function Footer() {
                   document.getElementById("err").style.color = "green";
                   document.getElementById("err").innerText =
                     "Successfully sent your message!";
+                  // scroll to top and reload
+                  setTimeout(() => {
+                    window.scrollTo(0, 0);
+                    window.location.reload();
+                  }, 2000);
                 } else {
                   document.getElementById("err").innerText =
                     "Please fill all the fields";
