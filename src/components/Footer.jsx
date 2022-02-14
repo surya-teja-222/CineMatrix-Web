@@ -2,12 +2,22 @@ import "./footer.css";
 import hero from "./../assets/hero.svg";
 import logo from "./../assets/logo/logo_centered.svg";
 import contact from "./../methods/postContact";
+
+// import bg from "./../assets/fbg.svg";
+
 export default function Footer() {
   return (
     <>
       <section>
-        <div className="grid-f  bg-black">
-          <div className="mt-auto md:pt-4 mob-bot">
+        <div
+          className="grid-f  bg-black "
+          style={{
+            // backgroundImage: `url(${bg})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        >
+          <div className="mob-bot mt-auto md:pt-4">
             <img
               src={hero}
               alt=""
@@ -15,7 +25,7 @@ export default function Footer() {
               draggable="false"
             />
           </div>
-          <div className="md:my-6 flex flex-col md:justify-between mdm:gap-16 mdm:mt-8">
+          <div className="mdm:gap-16 mdm:mt-8 flex flex-col md:my-6 md:justify-between">
             <img
               src={logo}
               alt="logo"
@@ -24,7 +34,7 @@ export default function Footer() {
             />
             <div className="font-Poppins footer-b flex flex-col  self-center font-bold leading-[38px]">
               <div className="flex self-center ">
-                <p className="unselectable text-white text-center">
+                <p className="unselectable text-center text-white">
                   Made with love <span className="test">💖</span> by{" "}
                   <span className="test cursor-pointer text-[#FF1516] hover:underline">
                     Team CineMatrix
@@ -32,7 +42,7 @@ export default function Footer() {
                 </p>
               </div>
               <div className="flex self-center">
-                <p className="unselectable  text-[#827F7F] text-center">
+                <p className="unselectable  text-center text-[#827F7F]">
                   Developed by{" "}
                   <span className="test cursor-pointer text-[#FF1516] hover:underline">
                     Surya
@@ -44,7 +54,7 @@ export default function Footer() {
                 </p>
               </div>
               <div className="flex self-center">
-                <p className="unselectable text-[#827F7F] text-center">
+                <p className="unselectable text-center text-[#827F7F]">
                   Designed by{" "}
                   <span className="test cursor-pointer text-[#FF1516] hover:underline">
                     Harsha
@@ -52,7 +62,7 @@ export default function Footer() {
                 </p>
               </div>
               <div className="flex self-center">
-                <p className="unselectable text-white text-center">
+                <p className="unselectable text-center text-white">
                   &#9400; Copyright{" "}
                   <span className="test cursor-pointer text-[#FF1516] hover:underline">
                     CineMatrix
@@ -62,7 +72,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="font-Poppins mdm:mt-6 md:my-6 flex flex-col justify-center gap-4 text-2xl font-bold">
+          <div className="font-Poppins mdm:mt-6 flex flex-col justify-center gap-4 text-2xl font-bold md:my-6">
             <h2 className="unselectable mx-auto text-white">Contact Us</h2>
             {/* <div className="mx-8 rounded-md bg-[#C4C4C499] p-4"></div> */}
             <input
