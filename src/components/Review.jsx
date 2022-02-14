@@ -87,14 +87,7 @@ export default function Review({ searchTerm }) {
 
   return (
     <>
-      <div className="relative w-full">
-        <div
-          className="mdm:hidden absolute -z-40 h-full w-full"
-          style={{
-            backgroundImage: `url(${bg})`,
-          }}
-        ></div>
-        <div className=" font-Poppins mdm:w-full z-50  mx-auto flex w-[80%] flex-col bg-gradient-to-tl from-indigo-900 to-purple-900">
+        <div className=" font-Poppins w-full z-50  mx-auto flex flex-col bg-gradient-to-tl from-indigo-900 to-purple-900">
           <h1 className="mdm:text-2xl my-4 py-4 text-center text-5xl font-extrabold capitalize text-white">
             Thanks for Visiting Us
           </h1>
@@ -328,7 +321,6 @@ export default function Review({ searchTerm }) {
             </div>
           </div>
         </div>
-      </div>
     </>
   );
 }
