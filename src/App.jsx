@@ -18,6 +18,7 @@ import scalability from "./assets/scalability.svg";
 // JSX COMPONENTS
 import Hero from "./hero";
 import Footer from "./components/Footer";
+import Review from "./components/Review";
 import Main from "./components/main";
 
 // methods
@@ -301,9 +302,9 @@ function App() {
       {/* normal  search bar , flex of (search part 1 , part 2) */}
       {/* <Main searchTerm={searchTerm} />
       </div> */}
-
+      <Review searchTerm={searchTerm}  />
       <footer>
-        <Footer/>
+        <Footer />
       </footer>
     </>
   );

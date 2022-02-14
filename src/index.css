@@ -108,3 +108,9 @@ body {
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
 }
+
+
+
+.mstar{
+  transition: all 0.5s ease-in-out;
+}
