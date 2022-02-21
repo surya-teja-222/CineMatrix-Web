@@ -135,10 +135,9 @@ body {
   }
 }
 
-
-.abody{
-  overflow:hidden;
-  transition:max-height 1s ease-in-out;
-  height:auto;
+.abody {
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+  height: auto;
   /* max-height:600px;  */
 }

@@ -37,7 +37,7 @@ export default function DataItem({ mName, i, mIndex }) {
       setDate(data.release_date);
       setRating(data.vote_average);
       setImg("https://image.tmdb.org/t/p/w500" + data.poster_path);
-    })
+    });
 
   return (
     <>
