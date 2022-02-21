@@ -15,6 +15,7 @@ module.exports = {
             fontFamily: {
                 'Dosis': ['Dosis', 'sans-serif'],
                 'Poppins': ['Poppins', 'sans-serif'],
+                'Nanum': ['Nanum Brush Script', 'cursive'],
             },
             keyframes: {
                 'modal-in': {
@@ -66,7 +67,8 @@ module.exports = {
                     '100%': {
                         transform: "translateZ(160)"
                     }
-                }
+                },
+                
             },
             animation: {
                 'modal': 'modal-in 0.3s ease-in-out ',

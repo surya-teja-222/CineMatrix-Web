@@ -2,6 +2,8 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
+import React, { lazy, Suspense } from "react";
+
 // Images
 import dc from "./assets/dc.png";
 import k from "./assets/k.png";
@@ -17,12 +19,17 @@ import scalability from "./assets/scalability.svg";
 
 // JSX COMPONENTS
 import Hero from "./hero";
-import Footer from "./components/Footer";
-import Review from "./components/Review";
-import Main from "./components/main";
+// import Footer from "./components/Footer";
+// import Review from "./components/Review";
+// import Main from "./components/main";
+import About from "./components/aboutUs";
 
 // methods
 import fetchh from "./methods/fetchh";
+
+const Review = lazy(() => import("./components/Review"));
+const Footer = lazy(() => import("./components/Footer"));
+const Main = lazy(() => import("./components/main"));
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -96,19 +103,34 @@ function App() {
           <div className="carousel" data-carousel>
             <ul data-slides>
               <li className="slide" data-active>
-                <img src={k} alt="Korean bg" draggable="false" />
+                <img src={k} alt="Korean bg" draggable="false" loading="lazy" />
               </li>
               <li className="slide">
-                <img src={marvel} alt="Marvel bg" draggable="false" />
+                <img
+                  src={marvel}
+                  alt="Marvel bg"
+                  draggable="false"
+                  loading="lazy"
+                />
               </li>
               <li className="slide">
-                <img src={x} alt="Unknown bg" draggable="false" />
+                <img
+                  src={x}
+                  alt="Unknown bg"
+                  draggable="false"
+                  loading="lazy"
+                />
               </li>
               <li className="slide">
-                <img src={dc} alt="DC bg" draggable="false" />
+                <img src={dc} alt="DC bg" draggable="false" loading="lazy" />
               </li>
               <li className="slide">
-                <img src={frozen} alt="frozen bg" draggable="false" />
+                <img
+                  src={frozen}
+                  alt="frozen bg"
+                  draggable="false"
+                  loading="lazy"
+                />
               </li>
             </ul>
           </div>
@@ -119,6 +141,7 @@ function App() {
           draggable="false"
           alt=""
           id="bottom_desktop"
+          loading="lazy"
         />
         <img
           src={bottomMobile}
@@ -126,6 +149,7 @@ function App() {
           draggable="false"
           alt=""
           id="bottom_mobile"
+          loading="lazy"
         />
       </div>
       <div className="z-10 flex h-screen  flex-col   overflow-x-hidden">
@@ -136,6 +160,7 @@ function App() {
               alt="Logo CInematrixs"
               draggable="false"
               className="mdm:h-9 unselectable my-auto  h-[67px] w-[286px]"
+              loading="lazy"
             />
             <div className="font-popins mdm:hidden flex  gap-8 text-[24px] font-bold not-italic leading-[60px] text-[#ffffff]">
               <p className="shad unselectable mt-auto cursor-pointer	 text-[#ffffffce] no-underline transition-all delay-300 duration-300 ease-in-out hover:text-white hover:underline">
@@ -247,6 +272,7 @@ function App() {
             draggable="false"
             className="mdm:mx-auto mdm:w-1/3 mt-auto w-3/4"
             alt=""
+            loading="lazy"
           />
         </div>
         <div className="font-Dosis my-16 flex flex-col  justify-center gap-8 font-bold md:mx-24 md:w-1/2">
@@ -262,6 +288,7 @@ function App() {
                     className="unselectable"
                     alt="Technology used 1"
                     draggable="false"
+                    loading="lazy"
                   />
                 </div>
                 <div className="smm-w[80%] my-auto sm:w-2/3">
@@ -281,6 +308,7 @@ function App() {
                     className="unselectable"
                     alt="Technology used"
                     draggable="false"
+                    loading="lazy"
                   />
                 </div>
                 <div className="smm-w[80%] my-auto sm:w-2/3">
@@ -298,14 +326,27 @@ function App() {
         </div>
       </div>
 
-      {/* <div id="main_search" className="search h-screen w-full"> */}
+      <Suspense fallback={<div id="main_search" className="search "></div>}>
+        <div id="main_search" className="search ">
+          {/* normal  search bar , flex of (search part 1 , part 2) */}
+          <Main searchTerm={searchTerm} />
+        </div>
+      </Suspense>
+      <About />
+      {/* <div id="main_search" className="search "> */}
       {/* normal  search bar , flex of (search part 1 , part 2) */}
-      {/* <Main searchTerm={searchTerm} />
-      </div> */}
-      <Review searchTerm={searchTerm}  />
-      <footer>
-        <Footer />
-      </footer>
+      {/* <Main searchTerm={searchTerm} /> */}
+      {/* </div>1 */}
+
+      <Suspense fallback={<div>Loading... </div>}>
+        <Review searchTerm={searchTerm} />
+      </Suspense>
+
+      <Suspense fallback={<footer>Loading... </footer>}>
+        <footer>
+          <Footer />
+        </footer>
+      </Suspense>
     </>
   );
   function setInner(suggestions) {

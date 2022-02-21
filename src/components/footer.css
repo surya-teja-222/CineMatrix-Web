@@ -4,7 +4,6 @@
   .grid-f {
     display: grid;
     grid-template-columns: 1fr 40% 1fr;
-    margin-top: 2rem;
     width: 100%;
   }
 }

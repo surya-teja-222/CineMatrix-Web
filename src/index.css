@@ -8,6 +8,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap");
 
 @layer utilities {
   .transition-gen {
@@ -22,6 +23,16 @@
   .animation-delay-4000 {
     animation-delay: 4s;
   }
+}
+
+::-moz-selection {
+  background: rgb(240, 240, 86);
+  color: #333;
+}
+
+::selection {
+  background: rgb(240, 240, 86);
+  color: #333;
 }
 
 *,
@@ -109,8 +120,25 @@ body {
   -webkit-backdrop-filter: blur(2px);
 }
 
-
-
-.mstar{
+.mstar {
   transition: all 0.5s ease-in-out;
+}
+
+@keyframes waviy {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+}
+
+
+.abody{
+  overflow:hidden;
+  transition:max-height 1s ease-in-out;
+  height:auto;
+  /* max-height:600px;  */
 }
