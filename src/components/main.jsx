@@ -1,3 +1,6 @@
+import PropTypes from "prop-types";
+import React from "react";
+
 import { useState, useEffect } from "react";
 import getData from "../methods/getData";
 import DataItem from "./DataItem";
@@ -6,7 +9,7 @@ import searchIco from "./../assets/search.png";
 import interest from "./../assets/Based On Your Interests.svg";
 import loading from "./../assets/loading.gif";
 
-export default function Main({ searchTerm }) {
+function Main({ searchTerm }) {
   const [search, setSearch] = useState("");
   const [knn, setKnn] = useState("");
   const [svd, setSvd] = useState("");
@@ -107,7 +110,12 @@ export default function Main({ searchTerm }) {
   }
 
   function load(type, data) {
-    if (data !== "" && data !== undefined && data !== null && data !== {}) {
+    if (
+      data !== "" &&
+      typeof data !== "undefined" &&
+      data !== null &&
+      data !== {}
+    ) {
       var d = JSON.parse(data);
       // console.log(d);
       var movies = d.movie;
@@ -177,3 +185,10 @@ export default function Main({ searchTerm }) {
 
   return <></>;
 }
+
+// prop types for the component
+Main.propTypes = {
+  searchTerm: PropTypes.string.isRequired,
+};
+
+export default Main;

@@ -1,8 +1,5 @@
 // react components
-import { useEffect } from "react";
-import { useState } from "react";
-
-import React, { lazy, Suspense } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 
 // Images
 import dc from "./assets/dc.png";
@@ -356,6 +353,7 @@ function App() {
         array.push(
           <div
             key={i}
+            role={"list"}
             className="terms font-Poppins w-full cursor-pointer rounded-t-md bg-white text-center font-semibold text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
             onClick={(e) => {
               setSearchTerm(e.target.innerText);
@@ -376,6 +374,7 @@ function App() {
       } else if (i === suggestions.length - 1) {
         array.push(
           <div
+            role={"list"}
             key={i}
             className="terms font-Poppins w-full cursor-pointer rounded-b-md bg-white text-center font-semibold capitalize text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
             onClick={(e) => {
@@ -397,6 +396,7 @@ function App() {
       } else {
         array.push(
           <div
+            role={'list'}
             key={i}
             className="terms font-Poppins w-full cursor-pointer bg-white text-center font-semibold  capitalize text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
             onClick={(e) => {

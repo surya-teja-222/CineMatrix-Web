@@ -1,3 +1,6 @@
+import PropTypes from "prop-types";
+import React from "react";
+
 import gift from "../assets/gift.svg";
 import tree from "../assets/tree.svg";
 import star from "../assets/star.svg";
@@ -317,3 +320,7 @@ export default function Review({ searchTerm }) {
     </>
   );
 }
+
+Review.propTypes = {
+  searchTerm: PropTypes.string.isRequired,
+};

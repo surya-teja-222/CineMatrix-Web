@@ -1,6 +1,7 @@
 import surya from "./../assets/surya-img.svg";
 import sasi from "./../assets/sasi-img.svg";
 import harsha from "./../assets/harsha-img.svg";
+import React from "react";
 
 export default function AboutUs() {
   return (

@@ -2,6 +2,7 @@ import "./footer.css";
 import hero from "./../assets/hero.svg";
 import logo from "./../assets/logo/logo_centered.svg";
 import contact from "./../methods/postContact";
+import React from "react";
 
 // import bg from "./../assets/fbg.svg";
 
@@ -93,6 +94,7 @@ export default function Footer() {
               rows={3}
             />
             <div
+              role={"button"}
               className="test unselectable mx-auto cursor-pointer rounded-lg bg-white p-2 hover:bg-blue-500 hover:text-white"
               onClick={() => {
                 document.getElementById("err").innerText = "";

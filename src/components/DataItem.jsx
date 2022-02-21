@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-
+import PropTypes from "prop-types";
 import posterError from "../assets/postererror.webp";
+import React from "react";
 
 export default function DataItem({ mName, i, mIndex }) {
   // var genere, title, date, rating, img;
@@ -37,7 +38,7 @@ export default function DataItem({ mName, i, mIndex }) {
       setDate(data.release_date);
       setRating(data.vote_average);
       setImg("https://image.tmdb.org/t/p/w500" + data.poster_path);
-    })
+    });
 
   return (
     <>
@@ -112,4 +113,10 @@ const err = (mName) => {
       </p>
     </div>
   );
+};
+
+DataItem.propTypes = {
+  mName: PropTypes.string,
+  i: PropTypes.number,
+  mIndex: PropTypes.number,
 };

@@ -1,6 +1,6 @@
 export default async function getData(type, searchTerm) {
     try {
-        let url = process.env.REACT_APP_DATA_BASE_URL + '/' + type;
+        const url = process.env.REACT_APP_DATA_BASE_URL + '/' + type;
         const k = await fetch(url, {
             method: 'POST',
             headers: {
