@@ -396,7 +396,7 @@ function App() {
       } else {
         array.push(
           <div
-            role={'list'}
+            role={"list"}
             key={i}
             className="terms font-Poppins w-full cursor-pointer bg-white text-center font-semibold  capitalize text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
             onClick={(e) => {
@@ -430,7 +430,6 @@ function App() {
     return array;
   }
 }
-
 
 export default App;
 
