@@ -431,9 +431,6 @@ function App() {
   }
 }
 
-function test(s) {
-  console.log(s);
-}
 
 export default App;
 

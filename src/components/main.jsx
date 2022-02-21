@@ -76,7 +76,6 @@ export default function Main({ searchTerm }) {
                     document.getElementById("input").value !== search
                   ) {
                     setSearch(document.getElementById("input").value);
-                    console.log("updates");
                   }
                 }}
               />
@@ -109,9 +108,8 @@ export default function Main({ searchTerm }) {
 
   function load(type, data) {
     if (data !== "" && data !== undefined && data !== null && data !== {}) {
-      console.log(data);
       var d = JSON.parse(data);
-      console.log(d);
+      // console.log(d);
       var movies = d.movie;
       var index = d.title;
       var returndata = [];
