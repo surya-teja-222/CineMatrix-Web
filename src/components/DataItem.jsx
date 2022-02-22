@@ -44,7 +44,7 @@ export default function DataItem({ mName, i, mIndex }) {
     <>
       <div
         tabIndex={i}
-        className="group mdm:w-[90%] mdm:p-2 mdm:self-center w-3/4 rounded-lg bg-slate-400 p-6 text-lg text-gray-800 shadow-md  transition-all duration-500 ease-in-out md:mx-12"
+        className="group hmm font-Poppins mdm:w-[90%] mdm:p-2 mdm:self-center w-3/5 self-center rounded-lg bg-slate-500 bg-gradient-to-l from-[#d87a7aad] to-[#7c535396] p-6  text-lg text-gray-100 shadow-2xl outline-none  transition-all duration-500 ease-in-out md:mx-12"
       >
         <div className="head flex cursor-pointer justify-between">
           <h1 className="font-Poppins ml-4 inline-block text-2xl	 font-semibold capitalize not-italic transition-all duration-500 ease-in-out group-focus:italic group-focus:underline">
@@ -57,31 +57,34 @@ export default function DataItem({ mName, i, mIndex }) {
             viewBox="0 0 24 24"
             className="rotate-180  transition-all duration-1000 ease-in-out group-focus:rotate-0"
           >
-            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" />
+            <path
+              className="fill-white"
+              d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z"
+            />
           </svg>
         </div>
         <div className="abody mdm:flex-col ml-4 flex  max-h-0 justify-between gap-8 group-focus:max-h-[1000px]">
           <div className="flex flex-col gap-4 ">
-            <div className="genres  mt-4 text-green-600">
-              <p className="bold font-Poppins  mr-2 inline-block font-semibold text-black underline ">
+            <div className="genres  mt-4 text-[#18fb6f]">
+              <p className="bold font-Poppins  mr-2 inline-block font-semibold text-gray-100  ">
                 Genre: {"   "}
               </p>
               {genere ? genere : "Loading..."}
             </div>
             <div className="title ">
-              <p className="bold font-Poppins  mr-2 inline-block font-semibold  underline ">
+              <p className="bold font-Poppins  mr-2 inline-block text-[20px]  font-semibold ">
                 Title: {"   "}
               </p>
               {title ? title : "Loading..."}
             </div>
             <div className="release-date ">
-              <p className="bold font-Poppins  mr-2 inline-block font-semibold  underline ">
+              <p className="bold font-Poppins  mr-2 inline-block text-[20px]  font-semibold ">
                 Released On: {"   "}
               </p>
               {date ? date : "Loading..."}
             </div>
             <div className="rating ">
-              <p className="bold font-Poppins  mr-2 inline-block font-semibold  underline ">
+              <p className="bold font-Poppins  mr-2 inline-block text-[20px]  font-semibold ">
                 Rating (Out of 10): {"   "}
               </p>
               {rating ? rating : "Loading..."}

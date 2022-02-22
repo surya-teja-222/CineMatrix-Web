@@ -2,14 +2,10 @@
 import React, { useEffect, useState, lazy, Suspense } from "react";
 
 // Images
-import dc from "./assets/dc.png";
-import k from "./assets/k.png";
-import marvel from "./assets/marvel.png";
-import x from "./assets/x1.png";
-import frozen from "./assets/frozen.png";
+
 import desktop from "./assets/logo/desktop.svg";
-import bottomDesktop from "./assets/landing-bottom-desktop.png";
-import bottomMobile from "./assets/landing-bottom-mobile.svg";
+
+
 import binge from "./assets/binge.svg";
 import tech from "./assets/Technology.gif";
 import scalability from "./assets/scalability.svg";
@@ -88,42 +84,37 @@ function App() {
           delete activeSlide.dataset.active;
           move();
         }
-      }, 60000);
+      }, 5000);
     }
     move();
   }, []);
 
   return (
-    <>
+    <div className="cursor-white">
       <div className="absolute -z-50 h-screen w-full overflow-x-hidden">
         <section aria-label="Newest Photos">
           <div className="carousel" data-carousel>
             <ul data-slides>
               <li className="slide" data-active>
-                <img src={k} alt="Korean bg" draggable="false" loading="lazy" />
+                <img
+                  src={`${process.env.REACT_APP_STORAGE}LandingBg/korean.png`}
+                  alt="Korean bg"
+                  draggable="false"
+                  loading="lazy"
+                />
               </li>
+              {images()}
               <li className="slide">
                 <img
-                  src={marvel}
-                  alt="Marvel bg"
+                  src={`${process.env.REACT_APP_STORAGE}LandingBg/dc.png`}
+                  alt="DC bg"
                   draggable="false"
                   loading="lazy"
                 />
               </li>
               <li className="slide">
                 <img
-                  src={x}
-                  alt="Unknown bg"
-                  draggable="false"
-                  loading="lazy"
-                />
-              </li>
-              <li className="slide">
-                <img src={dc} alt="DC bg" draggable="false" loading="lazy" />
-              </li>
-              <li className="slide">
-                <img
-                  src={frozen}
+                  src={`${process.env.REACT_APP_STORAGE}LandingBg/frozen.png`}
                   alt="frozen bg"
                   draggable="false"
                   loading="lazy"
@@ -133,7 +124,7 @@ function App() {
           </div>
         </section>
         <img
-          src={bottomDesktop}
+          src={`${process.env.REACT_APP_STORAGE}assets/landing-bottom-desktop.png`}
           className="bottom_desktop mdm:hidden absolute bottom-0 z-[90] w-full transition-all duration-1000 ease-in-out"
           draggable="false"
           alt=""
@@ -141,7 +132,7 @@ function App() {
           loading="lazy"
         />
         <img
-          src={bottomMobile}
+          src={`${process.env.REACT_APP_STORAGE}assets/landing-bottom-mobile.svg`}
           className="bottom_desktop absolute bottom-0 z-[90] w-full transition-all duration-1000 ease-in-out md:hidden"
           draggable="false"
           alt=""
@@ -149,7 +140,8 @@ function App() {
           loading="lazy"
         />
       </div>
-      <div className="z-10 flex h-screen  flex-col   overflow-x-hidden">
+
+      <div className=" z-10 flex h-screen  flex-col   overflow-x-hidden">
         <header>
           <div className="mdm:px-2 flex h-[15%] w-full justify-between py-4 md:px-16">
             <img
@@ -163,10 +155,26 @@ function App() {
               <p className="shad unselectable mt-auto cursor-pointer	 text-[#ffffffce] no-underline transition-all delay-300 duration-300 ease-in-out hover:text-white hover:underline">
                 JaxxTopia
               </p>
-              <p className="shad unselectable mt-auto cursor-pointer	 text-[#ffffffce] no-underline transition-all delay-300 duration-300 ease-in-out hover:text-white hover:underline">
+              <p
+                className="shad unselectable mt-auto cursor-pointer	 text-[#ffffffce] no-underline transition-all delay-300 duration-300 ease-in-out hover:text-white hover:underline"
+                onClick={() => {
+                  // scroll to
+                  document.querySelector("#feature").scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+              >
                 How it's made
               </p>
-              <p className="shad unselectable mt-auto cursor-pointer 	 text-[#ffffffce] no-underline transition-all delay-300 duration-300 ease-in-out hover:text-white hover:underline">
+              <p
+                className="shad unselectable mt-auto cursor-pointer 	 text-[#ffffffce] no-underline transition-all delay-300 duration-300 ease-in-out hover:text-white hover:underline"
+                onClick={() => {
+                  // scroll to
+                  document.querySelector("#about").scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+              >
                 About Us
               </p>
             </div>
@@ -233,15 +241,32 @@ function App() {
               <p className=" unselectable mt-auto cursor-pointer  text-center	 text-[#ffffffce] no-underline   hover:text-white hover:underline">
                 JaxxTopia
               </p>
-              <p className=" unselectable mt-auto cursor-pointer text-center	 text-[#ffffffce] no-underline  hover:text-white hover:underline">
+              <p
+                className=" unselectable mt-auto cursor-pointer text-center	 text-[#ffffffce] no-underline  hover:text-white hover:underline"
+                onClick={() => {
+                  // scroll to
+                  document.querySelector("#about").scrollIntoView({
+                    behavior: "feature",
+                  });
+                }}
+              >
                 How it's made
               </p>
-              <p className=" unselectable mt-auto cursor-pointer  text-center	 text-[#ffffffce] no-underline  hover:text-white hover:underline">
+              <p
+                className=" unselectable mt-auto cursor-pointer  text-center	 text-[#ffffffce] no-underline  hover:text-white hover:underline"
+                onClick={() => {
+                  // scroll to
+                  document.querySelector("#about").scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+              >
                 About Us
               </p>
             </div>
           </div>
         </header>
+
         <div className="flex h-[60%]  w-full flex-col  overflow-x-clip ">
           <Hero />
           <div className="flex w-full justify-center">
@@ -259,8 +284,14 @@ function App() {
           </div>
         </div>
       </div>
+      <Suspense fallback={<div id="main_search" className="search "></div>}>
+        <div id="main_search" className="search ">
+          {/* normal  search bar , flex of (search part 1 , part 2) */}
+          <Main searchTerm={searchTerm} />
+        </div>
+      </Suspense>
       <div className="mdm:flex-col flex  w-full">
-        <div className="font-Poppins flex flex-col md:w-1/2">
+        <div id="feature" className="font-Poppins flex flex-col md:w-1/2">
           <h1 className="unselectable sp-t mdm:mt-4 mdm:text-center mdm:text-[28px] text-[42px] underline md:mx-16 md:mt-8">
             Features
           </h1>
@@ -323,13 +354,9 @@ function App() {
         </div>
       </div>
 
-      <Suspense fallback={<div id="main_search" className="search "></div>}>
-        <div id="main_search" className="search ">
-          {/* normal  search bar , flex of (search part 1 , part 2) */}
-          <Main searchTerm={searchTerm} />
-        </div>
-      </Suspense>
-      <About />
+      <section id="about">
+        <About />
+      </section>
       {/* <div id="main_search" className="search "> */}
       {/* normal  search bar , flex of (search part 1 , part 2) */}
       {/* <Main searchTerm={searchTerm} /> */}
@@ -344,7 +371,7 @@ function App() {
           <Footer />
         </footer>
       </Suspense>
-    </>
+    </div>
   );
   function setInner(suggestions) {
     var array = [];
@@ -396,7 +423,7 @@ function App() {
       } else {
         array.push(
           <div
-            role={'list'}
+            role={"list"}
             key={i}
             className="terms font-Poppins w-full cursor-pointer bg-white text-center font-semibold  capitalize text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
             onClick={(e) => {
@@ -431,6 +458,27 @@ function App() {
   }
 }
 
+function images() {
+  const item = (i) => {
+    return (
+      <li className="slide" key={i}>
+        <img
+          src={`${process.env.REACT_APP_STORAGE}LandingBg/${i}.jpg`}
+          alt={`bg-${i}`}
+          draggable="false"
+          loading="lazy"
+        />
+      </li>
+    );
+  };
+  const arr = [];
+  for (var i = 1; i <= 7; i++) {
+    if (i !== 5) {
+      arr.push(item(i));
+    }
+  }
+  return arr;
+}
 
 export default App;
 
