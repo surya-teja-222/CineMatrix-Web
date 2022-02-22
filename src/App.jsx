@@ -5,7 +5,6 @@ import React, { useEffect, useState, lazy, Suspense } from "react";
 
 import desktop from "./assets/logo/desktop.svg";
 
-
 import binge from "./assets/binge.svg";
 import tech from "./assets/Technology.gif";
 import scalability from "./assets/scalability.svg";

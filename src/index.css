@@ -170,7 +170,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.18);
 } */
 
-
 @supports (backdrop-filter: blur(16px)) {
   .hmm {
     background: rgba(30, 14, 14, 0.4);
