@@ -41,17 +41,23 @@ function Main({ searchTerm }) {
     if (search) {
       document.getElementById("input").value = search;
     }
+    if (document.getElementById("data-loading")) {
+      document.getElementById("data-loading").classList.remove("hidden");
+    }
   }, [search]);
 
   useEffect(() => {
     if (knn !== "" && svd !== "" && item !== "") {
-      document.querySelector("[data-loading]").style.display = "none";
+      document.getElementById("data-loading").classList.add("hidden");
     }
+    // if (document.getElementById("data-loading")) {
+    //   document.getElementById("data-loading").classList.toggle("hidden");
+    // }
   }, [knn, svd, item]);
 
   if (searchTerm !== "") {
     return (
-      <div className="cus mb-8 w-full bg-gradient-to-r from-[#3b5dcc] to-[#D12A1E] pb-5">
+      <div className="cus mb-8 w-full bg-gradient-to-r from-[#3b5dcc]  to-[#D12A1E] pb-5">
         <div className="flex w-full justify-between p-4 ">
           <div className="mdm:w-[95%] flex h-16 w-[50%] justify-between rounded-full bg-slate-100 shadow-2xl">
             <input
@@ -99,10 +105,10 @@ function Main({ searchTerm }) {
         />
 
         <div className="flex w-full flex-col gap-3 " id="knn-data" data-knn>
+          {loadingData()}
           {load("knn", knn)}
           {load("svd", svd)}
           {load("item", item)}
-          {loadingData()}
         </div>
       </div>
     );
@@ -158,7 +164,7 @@ function Main({ searchTerm }) {
       <>
         <div
           className="mdm:w-[90%] mdm:self-center  m-6 flex h-80 w-3/5 flex-col items-center justify-center gap-4 self-center rounded-2xl bg-slate-200 text-xl shadow-2xl md:mx-12"
-          data-loading
+          id="data-loading"
         >
           <div className="loading">
             <img

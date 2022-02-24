@@ -9,6 +9,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap");
 
 @layer utilities {
   .transition-gen {
@@ -170,7 +171,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.18);
 } */
 
-
 @supports (backdrop-filter: blur(16px)) {
   .hmm {
     background: rgba(30, 14, 14, 0.4);
@@ -189,3 +189,15 @@ body {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
 } */
+
+/* on hover over surya-img , make .surya visible */
+
+.l-bg {
+  background: linear-gradient(
+      90.46deg,
+      rgba(132, 216, 118, 0.2) 1.2%,
+      rgba(0, 252, 252, 0.2) 52.15%,
+      rgba(255, 80, 80, 0.2) 99.04%
+    ),
+    rgba(11, 6, 6, 0.85);
+}

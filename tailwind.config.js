@@ -16,6 +16,7 @@ module.exports = {
                 'Dosis': ['Dosis', 'sans-serif'],
                 'Poppins': ['Poppins', 'sans-serif'],
                 'Nanum': ['Nanum Brush Script', 'cursive'],
+                'Mochiy': ['Mochiy Pop One', 'sans-serif'],
             },
             keyframes: {
                 'modal-in': {
@@ -68,7 +69,7 @@ module.exports = {
                         transform: "translateZ(160)"
                     }
                 },
-                
+
             },
             animation: {
                 'modal': 'modal-in 0.3s ease-in-out ',

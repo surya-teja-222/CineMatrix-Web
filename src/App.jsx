@@ -5,7 +5,6 @@ import React, { useEffect, useState, lazy, Suspense } from "react";
 
 import desktop from "./assets/logo/desktop.svg";
 
-
 import binge from "./assets/binge.svg";
 import tech from "./assets/Technology.gif";
 import scalability from "./assets/scalability.svg";
@@ -245,7 +244,7 @@ function App() {
                 className=" unselectable mt-auto cursor-pointer text-center	 text-[#ffffffce] no-underline  hover:text-white hover:underline"
                 onClick={() => {
                   // scroll to
-                  document.querySelector("#about").scrollIntoView({
+                  document.querySelector("#feature").scrollIntoView({
                     behavior: "feature",
                   });
                 }}
