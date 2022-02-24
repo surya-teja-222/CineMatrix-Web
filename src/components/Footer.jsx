@@ -1,6 +1,5 @@
 import "./footer.css";
 import hero from "./../assets/hero.svg";
-import logo from "./../assets/logo/logo_centered.svg";
 import contact from "./../methods/postContact";
 import React from "react";
 
@@ -28,7 +27,7 @@ export default function Footer() {
           </div>
           <div className="mdm:gap-16 mdm:mt-8 flex flex-col md:my-6 md:justify-between">
             <img
-              src={logo}
+              src={`${process.env.REACT_APP_STORAGE}assets/logo/logo_centered.webp`}
               alt="logo"
               className="test  mx-auto w-1/2 md:p-4"
               draggable="false"

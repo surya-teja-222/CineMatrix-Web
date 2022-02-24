@@ -3,9 +3,6 @@ import React, { useEffect, useState, lazy, Suspense } from "react";
 
 // Images
 
-import desktop from "./assets/logo/desktop.svg";
-
-import binge from "./assets/binge.svg";
 import tech from "./assets/Technology.gif";
 import scalability from "./assets/scalability.svg";
 
@@ -96,16 +93,15 @@ function App() {
             <ul data-slides>
               <li className="slide" data-active>
                 <img
-                  src={`${process.env.REACT_APP_STORAGE}LandingBg/korean.png`}
+                  src={`${process.env.REACT_APP_STORAGE}LandingBg/korean.webp`}
                   alt="Korean bg"
                   draggable="false"
-                  loading="lazy"
                 />
               </li>
               {images()}
               <li className="slide">
                 <img
-                  src={`${process.env.REACT_APP_STORAGE}LandingBg/dc.png`}
+                  src={`${process.env.REACT_APP_STORAGE}LandingBg/dc.webp`}
                   alt="DC bg"
                   draggable="false"
                   loading="lazy"
@@ -113,7 +109,7 @@ function App() {
               </li>
               <li className="slide">
                 <img
-                  src={`${process.env.REACT_APP_STORAGE}LandingBg/frozen.png`}
+                  src={`${process.env.REACT_APP_STORAGE}LandingBg/frozen.webp`}
                   alt="frozen bg"
                   draggable="false"
                   loading="lazy"
@@ -123,20 +119,18 @@ function App() {
           </div>
         </section>
         <img
-          src={`${process.env.REACT_APP_STORAGE}assets/landing-bottom-desktop.png`}
+          src={`${process.env.REACT_APP_STORAGE}assets/landing-bottom-desktop.webp`}
           className="bottom_desktop mdm:hidden absolute bottom-0 z-[90] w-full transition-all duration-1000 ease-in-out"
           draggable="false"
           alt=""
           id="bottom_desktop"
-          loading="lazy"
         />
         <img
-          src={`${process.env.REACT_APP_STORAGE}assets/landing-bottom-mobile.svg`}
+          src={`${process.env.REACT_APP_STORAGE}assets/landing-bottom-mobile.webp`}
           className="bottom_desktop absolute bottom-0 z-[90] w-full transition-all duration-1000 ease-in-out md:hidden"
           draggable="false"
           alt=""
           id="bottom_mobile"
-          loading="lazy"
         />
       </div>
 
@@ -144,7 +138,7 @@ function App() {
         <header>
           <div className="mdm:px-2 flex h-[15%] w-full justify-between py-4 md:px-16">
             <img
-              src={desktop}
+              src={`${process.env.REACT_APP_STORAGE}assets/logo/desktop.webp`}
               alt="Logo CInematrixs"
               draggable="false"
               className="mdm:h-9 unselectable my-auto  h-[67px] w-[286px]"
@@ -295,7 +289,7 @@ function App() {
             Features
           </h1>
           <img
-            src={binge}
+            src={`${process.env.REACT_APP_STORAGE}assets/binge.webp`}
             draggable="false"
             className="mdm:mx-auto mdm:w-1/3 mt-auto w-3/4"
             alt=""
@@ -462,7 +456,10 @@ function images() {
     return (
       <li className="slide" key={i}>
         <img
-          src={`${process.env.REACT_APP_STORAGE}LandingBg/${i}.jpg`}
+          src={`${process.env.REACT_APP_STORAGE}LandingBg/${i}.webp`}
+          srcSet={`${process.env.REACT_APP_STORAGE}LandingBg/srcset/${i}.webp 480w , ${process.env.REACT_APP_STORAGE}LandingBg/${i}.webp 800w`}
+          sizes="(max-width: 600px) 480px,
+            800px"
           alt={`bg-${i}`}
           draggable="false"
           loading="lazy"
@@ -472,7 +469,7 @@ function images() {
   };
   const arr = [];
   for (var i = 1; i <= 7; i++) {
-    if (i !== 5) {
+    if (i !== 5 && i !== 2) {
       arr.push(item(i));
     }
   }
