@@ -33,7 +33,11 @@ export default function DataItem({ mName, i, mIndex }) {
     .then((res) => res.json())
     .then((data) => {
       const genres = data.genres;
-      setGenere(genres.map((genre) => genre.name).join(", "));
+      try {
+        setGenere(genres.map((genre) => genre.name).join(", "));
+      } catch (e) {
+        setGenere(genres.name);
+      }
       setTitle(data.title);
       setDate(data.release_date);
       setRating(data.vote_average);
