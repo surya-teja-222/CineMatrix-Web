@@ -38,7 +38,7 @@ export default function DataItem({ mName, i, mIndex }) {
         try {
           setGenere(genres.map((genre) => genre.name).join(", "));
         } catch (e) {
-          setGenere(genres.name);
+          setGenere(genres[0].name);
         }
         setTitle(data.title);
         setDate(data.release_date);
