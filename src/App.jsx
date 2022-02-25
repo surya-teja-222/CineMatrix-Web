@@ -144,7 +144,7 @@ function App() {
               src={`${process.env.REACT_APP_STORAGE}assets/logo/desktop.webp`}
               alt="Logo CInematrixs"
               draggable="false"
-              className="mdm:h-9 unselectable my-auto  h-[67px] w-[286px]"
+              className="mdm:h-9 unselectable mdm:w-fit  my-auto md:h-[67px] md:w-[286px]"
               loading="lazy"
             />
             <div className="font-popins mdm:hidden flex  gap-8 text-[24px] font-bold not-italic leading-[60px] text-[#ffffff]">

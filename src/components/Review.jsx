@@ -12,7 +12,7 @@ import rateMovie from "../methods/rateMovie";
 
 export default function Review({ searchTerm }) {
   if (!searchTerm) {
-    searchTerm = "searchTerm Sample";
+    searchTerm = "Iron Man 2";
   }
 
   function changeStar(e) {
@@ -72,7 +72,7 @@ export default function Review({ searchTerm }) {
     }, 2000);
   }
   function setMovieRating(e) {
-    rateMovie(e.target.id);
+    rateMovie(searchTerm, e.target.id);
 
     e.target.onmouseout = null;
 
@@ -197,7 +197,7 @@ export default function Review({ searchTerm }) {
               draggable="false"
             />
             <h2 className="unselectable mt-[60px] h-24 text-xl font-semibold">
-              How good can you rate the movie movie_name ?
+              How good can you rate the movie {searchTerm} ?
             </h2>
             <p className="unselectable text-center text-xl font-light italic">
               Rate your experience

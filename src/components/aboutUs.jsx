@@ -61,7 +61,7 @@ export default function AboutUs() {
         </div>
         <div className="mdm:max-h-screen mdm:h-fit flex h-full bg-[#85D876] md:flex-col md:justify-end">
           <img
-            src={`${process.env.REACT_APP_STORAGE}assets/surya.png`}
+            src={`${process.env.REACT_APP_STORAGE}assets/surya.webp`}
             className="mdm:max-h-screen mdm:w-1/2 mdm:mr-auto mt-auto  w-full md:ml-auto "
             draggable="false"
             alt="Surya Teja Reddy @surya-teja-222 https://github.com/surya-teja-222"
