@@ -9,7 +9,7 @@ export default function AboutUs() {
   return (
     <section className="about-us" aria-label="About the devs">
       <div className="h-16 w-full bg-[#2F2929] md:hidden">
-        <h3 className="font-Nanum m-auto  text-center align-middle text-[4rem] text-white">
+        <h3 className="font-Nanum m-auto  text-center align-middle text-[3.5rem] leading-[64px] text-white">
           About the Team
         </h3>
       </div>
@@ -77,7 +77,7 @@ export default function AboutUs() {
               <br /> (frontend,backend)
             </h3>
 
-            <div className="m-auto mx-2 grid grid-cols-4 gap-2 rounded-full bg-[#FFEDED] px-5 py-2 text-center">
+            <div className="m-auto mx-2 grid grid-cols-4 gap-1 rounded-full bg-[#FFEDED] px-5 py-2 text-center">
               <a
                 href="https://github.com/surya-teja-222"
                 className="group relative"

@@ -95,6 +95,7 @@ function App() {
                 <img
                   src={`${process.env.REACT_APP_STORAGE}LandingBg/korean.webp`}
                   alt="Korean bg"
+                  className="h-full w-full"
                   draggable="false"
                 />
               </li>
@@ -103,6 +104,7 @@ function App() {
                 <img
                   src={`${process.env.REACT_APP_STORAGE}LandingBg/dc.webp`}
                   alt="DC bg"
+                  className="h-full w-full"
                   draggable="false"
                   loading="lazy"
                 />
@@ -111,6 +113,7 @@ function App() {
                 <img
                   src={`${process.env.REACT_APP_STORAGE}LandingBg/frozen.webp`}
                   alt="frozen bg"
+                  className="h-full w-full"
                   draggable="false"
                   loading="lazy"
                 />
@@ -462,6 +465,7 @@ function images() {
             800px"
           alt={`bg-${i}`}
           draggable="false"
+          className="h-full w-full object-cover"
           loading="lazy"
         />
       </li>

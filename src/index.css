@@ -26,6 +26,29 @@
   }
 }
 
+html {
+  scrollbar-width: thin;
+}
+
+html::-webkit-scrollbar {
+  width: 1vw;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: rgba(160, 150, 150, 0.333);
+}
+html::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    45deg,
+    rgba(160, 150, 150, 0.333) 0%,
+    rgb(192, 102, 102) 50%,
+    rgba(77, 69, 69, 0.333) 100%
+  );
+}
+html::-webkit-scrollbar-track {
+  background-color: #555;
+}
+
 ::-moz-selection {
   background: rgb(240, 240, 86);
   color: #333;

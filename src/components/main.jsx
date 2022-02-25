@@ -22,6 +22,10 @@ function Main({ searchTerm }) {
   useEffect(async () => {
     // get data, set knn, svd , item
     if (search !== "") {
+      const resItem = new Promise(async (resolve, reject) => {
+        resolve(JSON.stringify(await getData("item", search)));
+      });
+      setItem(JSON.parse(await resItem));
       const resKnn = new Promise(async (resolve, reject) => {
         resolve(JSON.stringify(await getData("knn", search)));
       });
@@ -30,10 +34,6 @@ function Main({ searchTerm }) {
         resolve(JSON.stringify(await getData("svd", search)));
       });
       setSvd(JSON.parse(await resSvd));
-      const resItem = new Promise(async (resolve, reject) => {
-        resolve(JSON.stringify(await getData("item", search)));
-      });
-      setItem(JSON.parse(await resItem));
     }
   }, [search]);
 
@@ -106,9 +106,9 @@ function Main({ searchTerm }) {
 
         <div className="flex w-full flex-col gap-3 " id="knn-data" data-knn>
           {loadingData()}
+          {load("item", item)}
           {load("knn", knn)}
           {load("svd", svd)}
-          {load("item", item)}
         </div>
       </div>
     );
@@ -126,7 +126,7 @@ function Main({ searchTerm }) {
       var movies = d.movie;
       var index = d.title;
       var returndata = [];
-      if (type === "item") {
+      if (type === "knn") {
         returndata.push(
           <>
             <img
