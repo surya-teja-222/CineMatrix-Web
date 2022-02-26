@@ -315,13 +315,15 @@ function App() {
                     loading="lazy"
                   />
                 </div>
-                <div className="smm-w[80%] my-auto sm:w-2/3">
+                <div className="smm:w-[80%] my-auto sm:w-2/3">
                   <p className="mdm:text-sm p-4  text-lg">
-                    Get Personalised recommendations based on what you watched
-                    earlier. Our model always give you best suggestions. This is{" "}
-                    <b>
-                      <u>NOT ORIGINAL & sasi edit</u>
-                    </b>
+                    CineMatrix is one of its kind versatile, diversified movie
+                    recommending system which is based on not one or two but a
+                    combination five different recommending
+                    algorithms.CineMatrix is built on a solid foundation of
+                    advanced algorithms and methods like
+                    K-Nearest-Neighbours,tfidf,cosine similarity,SVD and many
+                    more other advanced techniques.
                   </p>
                 </div>
               </div>
@@ -337,11 +339,13 @@ function App() {
                 </div>
                 <div className="smm-w[80%] my-auto sm:w-2/3">
                   <p className="mdm:text-sm p-4  text-lg">
-                    Get Personalised recommendations based on what you watched
-                    earlier. Our model always give you best suggestions. This is{" "}
-                    <b>
-                      <u>NOT ORIGINAL & sasi edit</u>
-                    </b>
+                    All you have to do is enter the movie of you're choice and
+                    hit search, our recommender fetches the best matching
+                    results from our database containing more than a Lakh movies
+                    and displays simila rmovies to the movie you entered. Not
+                    just the similar movies, you are also greeted with other
+                    great movies in the segment that are liked by other users
+                    with a similar taste as you.
                   </p>
                 </div>
               </div>
