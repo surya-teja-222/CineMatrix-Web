@@ -80,7 +80,7 @@ function App() {
           delete activeSlide.dataset.active;
           move();
         }
-      }, 5000);
+      }, 2500);
     }
     move();
   }, []);
