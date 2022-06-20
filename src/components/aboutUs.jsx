@@ -9,17 +9,17 @@ export default function AboutUs() {
   return (
     <section className="about-us" aria-label="About the devs">
       <div className="h-16 w-full bg-[#2F2929] md:hidden">
-        <h3 className="font-Nanum m-auto  text-center align-middle text-[3.5rem] leading-[64px] text-white">
+        <h3 className="m-auto text-center  align-middle font-Nanum text-[3.5rem] leading-[64px] text-white">
           About the Team
         </h3>
       </div>
-      <div className="mdm:flex mdm:flex-col  relative min-h-[36rem]  w-full md:grid md:grid-cols-3">
-        <div className="mdm:hidden  absolute w-full py-4">
-          <h3 className="font-Nanum unselectable mx-auto text-center text-8xl text-white">
+      <div className="relative min-h-[36rem]  w-full md:grid  md:grid-cols-3 mdm:flex mdm:flex-col">
+        <div className="absolute  w-full py-4 mdm:hidden">
+          <h3 className="unselectable mx-auto text-center font-Nanum text-8xl text-white">
             About the Team
           </h3>
         </div>
-        <div className="mdm:hidden  absolute grid h-full w-full grid-cols-3">
+        <div className="absolute  grid h-full w-full grid-cols-3 mdm:hidden">
           <div className="group mx-auto mt-auto mb-6 flex h-full flex-col">
             <div className="mt-auto mb-6 gap-6">
               <img
@@ -27,7 +27,7 @@ export default function AboutUs() {
                 alt=""
                 className=" opacity-0 transition-all delay-100 duration-[1500ms] ease-in-out hover:opacity-100 group-hover:opacity-100"
               />
-              <h3 className="font-Mochiy text-center text-2xl text-black opacity-0 transition-all delay-200 duration-[1500ms] ease-in-out hover:opacity-100 group-hover:opacity-100">
+              <h3 className="text-center font-Mochiy text-2xl text-black opacity-0 transition-all delay-200 duration-[1500ms] ease-in-out hover:opacity-100 group-hover:opacity-100">
                 Full Stack Developer
                 <br /> (frontend,backend)
               </h3>
@@ -40,7 +40,7 @@ export default function AboutUs() {
                 alt=""
                 className=" opacity-0 transition-all delay-100 duration-[1500ms] ease-in-out hover:opacity-100 group-hover:opacity-100"
               />
-              <h3 className="font-Mochiy text-center text-2xl text-white opacity-0 transition-all delay-200 duration-[1500ms] ease-in-out hover:opacity-100 group-hover:opacity-100">
+              <h3 className="text-center font-Mochiy text-2xl text-white opacity-0 transition-all delay-200 duration-[1500ms] ease-in-out hover:opacity-100 group-hover:opacity-100">
                 Python Developer
                 <br /> (backend)
               </h3>
@@ -53,16 +53,16 @@ export default function AboutUs() {
                 alt=""
                 className=" opacity-0 transition-all delay-100 duration-[1500ms] ease-in-out hover:opacity-100 group-hover:opacity-100"
               />
-              <h3 className="font-Mochiy text-center text-2xl text-[#EB384D] opacity-0 transition-all delay-200 duration-[1500ms] ease-in-out hover:opacity-100 group-hover:opacity-100">
+              <h3 className="text-center font-Mochiy text-2xl text-[#EB384D] opacity-0 transition-all delay-200 duration-[1500ms] ease-in-out hover:opacity-100 group-hover:opacity-100">
                 UI / UX Designer
               </h3>
             </div>
           </div>
         </div>
-        <div className="mdm:max-h-screen mdm:h-fit flex h-full bg-[#85D876] md:flex-col md:justify-end">
+        <div className="flex h-full bg-[#85D876] md:flex-col md:justify-end mdm:h-fit mdm:max-h-screen">
           <img
             src={`${process.env.REACT_APP_STORAGE}assets/surya.webp`}
-            className="mdm:max-h-screen mdm:w-1/2 mdm:mr-auto mt-auto  w-full md:ml-auto "
+            className="mt-auto w-full md:ml-auto mdm:mr-auto  mdm:max-h-screen mdm:w-1/2 "
             draggable="false"
             alt="Surya Teja Reddy @surya-teja-222 https://github.com/surya-teja-222"
           />
@@ -72,7 +72,7 @@ export default function AboutUs() {
               alt=""
               className="transition-all delay-100 duration-[1500ms] ease-in-out"
             />
-            <h3 className="font-Mochiy text-center  text-white">
+            <h3 className="text-center font-Mochiy  text-white">
               Full Stack Developer
               <br /> (frontend,backend)
             </h3>
@@ -101,7 +101,7 @@ export default function AboutUs() {
                 />
               </a>
               <a
-                href="https://instagram/surya_teja_222"
+                href="https://instagram.com/surya_teja_222"
                 className="group relative"
               >
                 <img
@@ -122,10 +122,10 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
-        <div className="mdm:max-h-screen mdm:h-fit mdm:flex-row-reverse flex h-full justify-end bg-[#75D0D7] md:flex-col">
+        <div className="flex h-full justify-end bg-[#75D0D7] md:flex-col mdm:h-fit mdm:max-h-screen mdm:flex-row-reverse">
           <img
             src={`${process.env.REACT_APP_STORAGE}assets/sasi.webp`}
-            className="mdm:max-h-screen mdm:w-1/2  mdm:ml-auto mt-auto  w-full md:mx-auto "
+            className="mt-auto w-full  md:mx-auto mdm:ml-auto  mdm:max-h-screen mdm:w-1/2 "
             draggable="false"
             alt="Sasi Vatsal @sasivatsal7122 https://github.com/sasivatsal7122"
           />
@@ -135,7 +135,7 @@ export default function AboutUs() {
               alt=""
               className="transition-all delay-100 duration-[1500ms] ease-in-out"
             />
-            <h3 className="font-Mochiy text-center  text-white">
+            <h3 className="text-center font-Mochiy  text-white">
               Python Developer
               <br /> (backend)
             </h3>
@@ -185,10 +185,10 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
-        <div className="mdm:max-h-screen mdm:h-fit flex h-full justify-end bg-[#DE8B95] md:flex-col">
+        <div className="flex h-full justify-end bg-[#DE8B95] md:flex-col mdm:h-fit mdm:max-h-screen">
           <img
             src={`${process.env.REACT_APP_STORAGE}assets/harsha.webp`}
-            className="mdm:max-h-screen   mdm:w-1/2 mr-auto  w-full "
+            className="mr-auto   w-full mdm:max-h-screen  mdm:w-1/2 "
             draggable="false"
             alt="Harsha @HarshaMalla https://github.com/HarshaMalla"
           />
@@ -198,7 +198,7 @@ export default function AboutUs() {
               alt=""
               className="transition-all delay-100 duration-[1500ms] ease-in-out"
             />
-            <h3 className="font-Mochiy text-center  text-white">
+            <h3 className="text-center font-Mochiy  text-white">
               UI/UX Designer
             </h3>
 
@@ -248,7 +248,7 @@ export default function AboutUs() {
           </div>
         </div>
       </div>
-      <div className="l-bg mdm:hidden grid h-[80px] w-full grid-cols-3">
+      <div className="l-bg grid h-[80px] w-full grid-cols-3 mdm:hidden">
         <div className="m-auto flex gap-6 text-center">
           <a
             href="https://github.com/surya-teja-222"

@@ -65,7 +65,7 @@ function App() {
 
   useEffect(() => {
     function move() {
-      const timer = setTimeout(() => {
+      setTimeout(() => {
         // check if user is on this tab
         if (document.hidden) {
           move();
@@ -81,9 +81,11 @@ function App() {
           move();
         }
       }, 2500);
-      return () => clearTimeout(timer);
     }
-    move();
+    // execute mive function if user is on a pc and not on mobile
+    if (window.innerWidth > 600) {
+      move();
+    }
   }, []);
 
   return (
@@ -95,7 +97,7 @@ function App() {
               <li className="slide" data-active>
                 <img
                   src={`${process.env.REACT_APP_STORAGE}LandingBg/korean.webp`}
-                  alt="Korean bg"
+                  alt=""
                   className="h-full w-full"
                   draggable="false"
                 />
@@ -104,7 +106,7 @@ function App() {
               <li className="slide">
                 <img
                   src={`${process.env.REACT_APP_STORAGE}LandingBg/dc.webp`}
-                  alt="DC bg"
+                  alt=""
                   className="h-full w-full"
                   draggable="false"
                   loading="lazy"
@@ -113,7 +115,7 @@ function App() {
               <li className="slide">
                 <img
                   src={`${process.env.REACT_APP_STORAGE}LandingBg/frozen.webp`}
-                  alt="frozen bg"
+                  alt=""
                   className="h-full w-full"
                   draggable="false"
                   loading="lazy"
@@ -468,7 +470,7 @@ function images() {
           srcSet={`${process.env.REACT_APP_STORAGE}LandingBg/srcset/${i}.webp 480w , ${process.env.REACT_APP_STORAGE}LandingBg/${i}.webp 800w`}
           sizes="(max-width: 600px) 480px,
             800px"
-          alt={`bg-${i}`}
+          alt={``}
           draggable="false"
           className="h-full w-full object-cover"
           loading="lazy"
