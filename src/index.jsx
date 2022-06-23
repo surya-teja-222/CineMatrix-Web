@@ -1,6 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import "./index.css";
+import App from "./App";
+
+
 // //  sentry error reporting
 /*
 // import * as Sentry from "@sentry/react";
@@ -11,9 +15,6 @@ import ReactDOM from "react-dom";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getPerformance } from "firebase/performance";
-
-import "./index.css";
-import App from "./App";
 
 /*           SENTRY
 // Sentry.init({
@@ -28,6 +29,11 @@ import App from "./App";
 
 */
 
+const {
+  initializeAppCheck,
+  ReCaptchaV3Provider,
+} = require("firebase/app-check");
+
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_AUTH,
   authDomain: "cinematrix-143.firebaseapp.com",
@@ -41,6 +47,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const performance = getPerformance(app);
+
+
 
 ReactDOM.render(
   <React.StrictMode>
