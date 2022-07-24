@@ -7,7 +7,6 @@ import tech from "./assets/Technology.gif";
 import scalability from "./assets/scalability.svg";
 
 // JSX COMPONENTS
-import Hero from "./hero";
 import Footer from "./components/Footer";
 import Review from "./components/Review";
 import Main from "./components/main";
@@ -21,9 +20,12 @@ import fetchh from "./methods/fetchh";
 // const Main = lazy(() => import("./components/main"));
 
 function App() {
+  // Set search term of page
   const [searchTerm, setSearchTerm] = useState("");
+  // search results
   const [suggestions, setSuggestions] = useState([]);
 
+  // use effect to remove/add bottom background when input.
   useEffect(() => {
     document
       .querySelector("#hero_input")
@@ -73,6 +75,7 @@ function App() {
           className="h-full w-full"
           draggable="false"
         />
+
         <img
           src={`${process.env.REACT_APP_STORAGE}assets/landing-bottom-desktop.webp`}
           className="bottom_desktop mdm:hidden absolute bottom-0 z-[90] w-full transition-all duration-1000 ease-in-out"
@@ -87,6 +90,27 @@ function App() {
           alt=""
           id="bottom_mobile"
         />
+
+        {/* <picture
+          className="bottom_desktop absolute bottom-0 z-[90] m-auto w-full transition-all duration-1000 ease-in-out"
+          draggable="false"
+          alt=""
+          id="bottom_desktop"
+        >
+          <source
+            srcSet={`${process.env.REACT_APP_STORAGE}assets/landing-bottom-desktop.webp`}
+            media="(min-width: 1024px)"
+          />
+          <source
+            srcSet={`${process.env.REACT_APP_STORAGE}assets/landing-bottom-mobile.webp`}
+            media="(max-width: 1024px)  "
+          />
+          <img
+            src={`${process.env.REACT_APP_STORAGE}assets/landing-bottom-desktop.webp`}
+            alt=""
+            className="w-auto"
+          />
+        </picture> */}
       </div>
 
       <div className=" z-10 flex h-screen  flex-col   overflow-x-hidden">
@@ -220,7 +244,7 @@ function App() {
           <img
             src={`${process.env.REACT_APP_STORAGE}/testh.svg`}
             alt=""
-            className="unselectable m-auto h-3/4 w-fit"
+            className="unselectable m-auto h-1/2 w-fit"
           />
           <div className="flex w-full justify-center">
             <input
