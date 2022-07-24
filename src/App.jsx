@@ -8,17 +8,17 @@ import scalability from "./assets/scalability.svg";
 
 // JSX COMPONENTS
 import Hero from "./hero";
-// import Footer from "./components/Footer";
-// import Review from "./components/Review";
-// import Main from "./components/main";
+import Footer from "./components/Footer";
+import Review from "./components/Review";
+import Main from "./components/main";
 import About from "./components/aboutUs";
 
 // methods
 import fetchh from "./methods/fetchh";
 
-const Review = lazy(() => import("./components/Review"));
-const Footer = lazy(() => import("./components/Footer"));
-const Main = lazy(() => import("./components/main"));
+// const Review = lazy(() => import("./components/Review"));
+// const Footer = lazy(() => import("./components/Footer"));
+// const Main = lazy(() => import("./components/main"));
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -63,70 +63,19 @@ function App() {
     var k = fetch(k);
   }, []);
 
-  useEffect(() => {
-    function move() {
-      setTimeout(() => {
-        // check if user is on this tab
-        if (document.hidden) {
-          move();
-        } else {
-          const offset = 1;
-          const slides = document.querySelector("[data-slides]");
-          const activeSlide = slides.querySelector("[data-active]");
-          let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-          if (newIndex < 0) newIndex = slides.children.length - 1;
-          if (newIndex >= slides.children.length) newIndex = 0;
-          slides.children[newIndex].dataset.active = true;
-          delete activeSlide.dataset.active;
-          move();
-        }
-      }, 2500);
-    }
-    // execute mive function if user is on a pc and not on mobile
-    if (window.innerWidth > 600) {
-      move();
-    }
-  }, []);
-
   return (
     <div className="cursor-white">
       <div className="absolute -z-50 h-screen w-full overflow-x-hidden">
-        <section aria-label="Newest Photos">
-          <div className="carousel" data-carousel>
-            <ul data-slides>
-              <li className="slide" data-active>
-                <img
-                  src={`${process.env.REACT_APP_STORAGE}LandingBg/korean.webp`}
-                  alt=""
-                  className="h-full w-full"
-                  draggable="false"
-                />
-              </li>
-              {images()}
-              <li className="slide">
-                <img
-                  src={`${process.env.REACT_APP_STORAGE}LandingBg/dc.webp`}
-                  alt=""
-                  className="h-full w-full"
-                  draggable="false"
-                  loading="lazy"
-                />
-              </li>
-              <li className="slide">
-                <img
-                  src={`${process.env.REACT_APP_STORAGE}LandingBg/frozen.webp`}
-                  alt=""
-                  className="h-full w-full"
-                  draggable="false"
-                  loading="lazy"
-                />
-              </li>
-            </ul>
-          </div>
-        </section>
+        <img
+          // src={`https://asia-south1-cinematrix-144.cloudfunctions.net/objects/cinematrix/head`}
+          src={`${process.env.REACT_APP_STORAGE}/bg.webp`}
+          alt=""
+          className="h-full w-full"
+          draggable="false"
+        />
         <img
           src={`${process.env.REACT_APP_STORAGE}assets/landing-bottom-desktop.webp`}
-          className="bottom_desktop absolute bottom-0 z-[90] w-full transition-all duration-1000 ease-in-out mdm:hidden"
+          className="bottom_desktop mdm:hidden absolute bottom-0 z-[90] w-full transition-all duration-1000 ease-in-out"
           draggable="false"
           alt=""
           id="bottom_desktop"
@@ -142,15 +91,15 @@ function App() {
 
       <div className=" z-10 flex h-screen  flex-col   overflow-x-hidden">
         <header>
-          <div className="flex h-[15%] w-full justify-between py-4 md:px-16 mdm:px-2">
+          <div className="mdm:px-2 flex h-[15%] w-full justify-between py-4 md:px-16">
             <img
               src={`${process.env.REACT_APP_STORAGE}assets/logo/desktop.webp`}
               alt="Logo CInematrixs"
               draggable="false"
-              className="unselectable my-auto md:h-[67px]  md:w-[286px] mdm:h-9 mdm:w-fit"
+              className="unselectable mdm:h-9 mdm:w-fit  my-auto md:h-[67px] md:w-[286px]"
               loading="lazy"
             />
-            <div className="font-popins flex gap-8  text-[24px] font-bold not-italic leading-[60px] text-[#ffffff] mdm:hidden">
+            <div className="font-popins mdm:hidden flex  gap-8 text-[24px] font-bold not-italic leading-[60px] text-[#ffffff]">
               <p className="shad unselectable mt-auto cursor-pointer	 text-[#ffffffce] no-underline transition-all delay-300 duration-300 ease-in-out hover:text-white hover:underline">
                 JaxxTopia
               </p>
@@ -267,17 +216,22 @@ function App() {
         </header>
 
         <div className="flex h-[60%]  w-full flex-col  overflow-x-clip ">
-          <Hero />
+          {/* <Hero /> */}
+          <img
+            src={`${process.env.REACT_APP_STORAGE}/testh.svg`}
+            alt=""
+            className="unselectable m-auto h-3/4 w-fit"
+          />
           <div className="flex w-full justify-center">
             <input
-              className="font-popins h-[45px] w-[40%] rounded-[17px] text-center text-lg font-bold outline-none mdm:h-[60px] mdm:w-[90%] mdm:text-sm"
+              className="font-popins mdm:h-[60px] mdm:w-[90%] mdm:text-sm h-[45px] w-[40%] rounded-[17px] text-center text-lg font-bold outline-none"
               placeholder="Search for a similar movie recommendation"
               id="hero_input"
             />
           </div>
           <div
             id="suggestions"
-            className="mx-4 flex h-48 max-h-48  w-[40%] flex-col self-center  rounded-lg pt-1 mdm:w-[90%]"
+            className="mdm:w-[90%] mx-4 flex h-48  max-h-48 w-[40%] flex-col  self-center rounded-lg pt-1"
           >
             {setInner(suggestions)}
           </div>
@@ -289,27 +243,27 @@ function App() {
           <Main searchTerm={searchTerm} />
         </div>
       </Suspense>
-      <div className="flex w-full  mdm:flex-col">
-        <div id="feature" className="flex flex-col font-Poppins md:w-1/2">
-          <h1 className="unselectable sp-t text-[42px] underline md:mx-16 md:mt-8 mdm:mt-4 mdm:text-center mdm:text-[28px]">
+      <div className="mdm:flex-col flex  w-full">
+        <div id="feature" className="font-Poppins flex flex-col md:w-1/2">
+          <h1 className="unselectable sp-t mdm:mt-4 mdm:text-center mdm:text-[28px] text-[42px] underline md:mx-16 md:mt-8">
             Features
           </h1>
           <img
             src={`${process.env.REACT_APP_STORAGE}assets/binge.webp`}
             draggable="false"
-            className="mt-auto w-3/4 mdm:mx-auto mdm:w-1/3"
+            className="mdm:mx-auto mdm:w-1/3 mt-auto w-3/4"
             alt=""
             loading="lazy"
           />
         </div>
-        <div className="my-16 flex flex-col justify-center  gap-8 font-Dosis font-bold md:mx-24 md:w-1/2">
-          <div className="top-container relative w-full mdm:overflow-x-clip">
-            <div className="bgeffect absolute top-0 -left-4 -z-50 h-96 w-96   animate-blob rounded-full bg-purple-300 opacity-70 mix-blend-multiply blur-xl  filter mdm:h-44  mdm:w-44"></div>
-            <div className="bgeffect animation-delay-2000 absolute top-0 -right-4 -z-50 h-96 w-96   animate-blob rounded-full bg-yellow-300  opacity-70 mix-blend-multiply  blur-xl filter mdm:h-44 mdm:w-44"></div>
-            <div className="bgeffect animation-delay-4000 absolute -bottom-8 left-20 -z-50 h-96 w-96   animate-blob  rounded-full bg-pink-300 opacity-70 mix-blend-multiply  blur-xl filter mdm:h-44  mdm:w-44"></div>
+        <div className="font-Dosis my-16 flex flex-col  justify-center gap-8 font-bold md:mx-24 md:w-1/2">
+          <div className="top-container mdm:overflow-x-clip relative w-full">
+            <div className="bgeffect animate-blob mdm:h-44 mdm:w-44 absolute top-0 -left-4   -z-50 h-96 w-96 rounded-full bg-purple-300 opacity-70  mix-blend-multiply blur-xl  filter"></div>
+            <div className="bgeffect animation-delay-2000 animate-blob mdm:h-44 mdm:w-44 absolute top-0 -right-4   -z-50 h-96 w-96  rounded-full bg-yellow-300  opacity-70 mix-blend-multiply blur-xl filter"></div>
+            <div className="bgeffect animation-delay-4000 animate-blob mdm:h-44 mdm:w-44 absolute -bottom-8 left-20   -z-50  h-96 w-96 rounded-full bg-pink-300  opacity-70 mix-blend-multiply blur-xl  filter"></div>
             <div className="top-container flex flex-col gap-4 ">
-              <div className="flex w-[80%]  gap-2 rounded-lg bg-white px-2 opacity-100 shadow-lg focus:animate-slide-fwd-center md:min-h-[200px] smm:flex-col mdm:w-[80%] mdm:self-center">
-                <div className=" my-auto sm:w-1/3 smm:w-[80%] smm:self-center">
+              <div className="focus:animate-slide-fwd-center smm:flex-col  mdm:w-[80%] mdm:self-center flex w-[80%] gap-2 rounded-lg bg-white px-2 opacity-100 shadow-lg md:min-h-[200px]">
+                <div className=" smm:w-[80%] smm:self-center my-auto sm:w-1/3">
                   <img
                     src={tech}
                     className="unselectable"
@@ -318,8 +272,8 @@ function App() {
                     loading="lazy"
                   />
                 </div>
-                <div className="my-auto sm:w-2/3 smm:w-[80%]">
-                  <p className="p-4 text-lg  mdm:text-sm">
+                <div className="smm:w-[80%] my-auto sm:w-2/3">
+                  <p className="mdm:text-sm p-4  text-lg">
                     CineMatrix is one of its kind versatile, diversified movie
                     recommending system which is based on not one or two but a
                     combination five different recommending
@@ -330,8 +284,8 @@ function App() {
                   </p>
                 </div>
               </div>
-              <div className="flex  w-[80%] gap-2 rounded-lg bg-white px-2 opacity-100 shadow-lg md:min-h-[200px] smm:flex-col mdm:w-[80%] mdm:self-center">
-                <div className=" my-auto sm:w-1/3 smm:w-[80%] smm:self-center">
+              <div className="smm:flex-col  mdm:w-[80%] mdm:self-center flex w-[80%] gap-2 rounded-lg bg-white px-2 opacity-100 shadow-lg md:min-h-[200px]">
+                <div className=" smm:w-[80%] smm:self-center my-auto sm:w-1/3">
                   <img
                     src={scalability}
                     className="unselectable"
@@ -341,7 +295,7 @@ function App() {
                   />
                 </div>
                 <div className="smm-w[80%] my-auto sm:w-2/3">
-                  <p className="p-4 text-lg  mdm:text-sm">
+                  <p className="mdm:text-sm p-4  text-lg">
                     All you have to do is enter the movie of you're choice and
                     hit search, our recommender fetches the best matching
                     results from our database containing more than a Lakh movies
@@ -376,6 +330,7 @@ function App() {
       </Suspense>
     </div>
   );
+
   function setInner(suggestions) {
     var array = [];
     for (var i = 0; i < suggestions.length; i++) {
@@ -384,7 +339,7 @@ function App() {
           <div
             key={i}
             role={"list"}
-            className="terms w-full cursor-pointer rounded-t-md bg-white text-center font-Poppins font-semibold text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
+            className="terms font-Poppins w-full cursor-pointer rounded-t-md bg-white text-center font-semibold text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
             onClick={(e) => {
               setSearchTerm(e.target.innerText);
               document.querySelector("#main_search").scrollIntoView({
@@ -406,7 +361,7 @@ function App() {
           <div
             role={"list"}
             key={i}
-            className="terms w-full cursor-pointer rounded-b-md bg-white text-center font-Poppins font-semibold capitalize text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
+            className="terms font-Poppins w-full cursor-pointer rounded-b-md bg-white text-center font-semibold capitalize text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
             onClick={(e) => {
               setSearchTerm(e.target.innerText);
               document.querySelector("#main_search").scrollIntoView({
@@ -428,7 +383,7 @@ function App() {
           <div
             role={"list"}
             key={i}
-            className="terms w-full cursor-pointer bg-white text-center font-Poppins font-semibold  capitalize text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
+            className="terms font-Poppins w-full cursor-pointer bg-white text-center font-semibold  capitalize text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
             onClick={(e) => {
               setSearchTerm(e.target.innerText);
               document.querySelector("#main_search").scrollIntoView({
@@ -451,7 +406,7 @@ function App() {
       array.push(
         <div
           key={i}
-          className="terms w-full rounded-md bg-white  text-center font-Poppins font-semibold capitalize text-black transition-colors duration-100 ease-linear "
+          className="terms font-Poppins w-full rounded-md  bg-white text-center font-semibold capitalize text-black transition-colors duration-100 ease-linear "
         >
           No matching results found...
         </div>
@@ -459,32 +414,6 @@ function App() {
     }
     return array;
   }
-}
-
-function images() {
-  const item = (i) => {
-    return (
-      <li className="slide" key={i}>
-        <img
-          src={`${process.env.REACT_APP_STORAGE}LandingBg/${i}.webp`}
-          srcSet={`${process.env.REACT_APP_STORAGE}LandingBg/srcset/${i}.webp 480w , ${process.env.REACT_APP_STORAGE}LandingBg/${i}.webp 800w`}
-          sizes="(max-width: 600px) 480px,
-            800px"
-          alt={``}
-          draggable="false"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </li>
-    );
-  };
-  const arr = [];
-  for (var i = 1; i <= 7; i++) {
-    if (i !== 5 && i !== 2) {
-      arr.push(item(i));
-    }
-  }
-  return arr;
 }
 
 export default App;
