@@ -70,7 +70,7 @@ function App() {
       <div className="absolute -z-50 h-screen w-full overflow-x-hidden">
         <img
           // src={`https://asia-south1-cinematrix-144.cloudfunctions.net/objects/cinematrix/head`}
-          src={`${process.env.REACT_APP_STORAGE}/bg.webp`}
+          src={`${process.env.REACT_APP_STORAGE}bg.webp`}
           alt=""
           className="h-full w-full"
           draggable="false"
@@ -242,7 +242,7 @@ function App() {
         <div className="flex h-[60%]  w-full flex-col  overflow-x-clip ">
           {/* <Hero /> */}
           <img
-            src={`${process.env.REACT_APP_STORAGE}/testh.svg`}
+            src={`${process.env.REACT_APP_STORAGE}testh.svg`}
             alt=""
             className="unselectable m-auto h-1/2 w-fit"
           />
