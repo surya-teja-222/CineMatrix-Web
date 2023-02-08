@@ -50,7 +50,7 @@ export default function DataItem({ mName, i, mIndex }) {
 		<>
 			<div
 				tabIndex={i}
-				className="group hmm font-Poppins mdm:w-[90%] mdm:p-2 mdm:self-center w-3/5 self-center rounded-lg bg-slate-500 bg-gradient-to-l from-[#d87a7aad] to-[#7c535396] p-6  text-lg text-gray-100 shadow-2xl outline-none  transition-all duration-500 ease-in-out md:mx-12"
+				className="requires-animation group hmm font-Poppins mdm:w-[90%] mdm:p-2 mdm:self-center w-3/5 self-center rounded-lg bg-slate-500 bg-gradient-to-l from-[#d87a7aad] to-[#7c535396] p-6  text-lg text-gray-100 shadow-2xl outline-none  transition-all duration-500 ease-in-out md:mx-12"
 			>
 				<div className="head flex cursor-pointer justify-between">
 					<h1 className="font-Poppins ml-4 inline-block text-2xl	 font-semibold capitalize not-italic transition-all duration-500 ease-in-out group-focus:italic group-focus:underline">
