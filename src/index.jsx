@@ -18,9 +18,11 @@ const firebaseConfig = {
     measurementId: "G-GRNH879JLF",
 };
 
-const app = initializeApp(firebaseConfig);
-getAnalytics(app);
-getPerformance(app);
+if (process.env.NODE_ENV === "production") {
+    const app = initializeApp(firebaseConfig);
+    getAnalytics(app);
+    getPerformance(app);
+}
 
 
 const container = document.getElementById("root");

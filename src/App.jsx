@@ -389,7 +389,7 @@ function App() {
 					id="hero_container"
 				>
 					<img
-						src="heroImg.svg"
+						src="/assets/heroImg.svg"
 						alt="Reload Bro"
 						className="unselectable m-auto h-1/2 w-fit"
 					/>
