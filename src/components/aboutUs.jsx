@@ -23,7 +23,7 @@ export default function AboutUs() {
           <div className="group mx-auto mt-auto mb-6 flex h-full flex-col">
             <div className="mt-auto mb-6 gap-6">
               <img
-                src={`${process.env.REACT_APP_STORAGE}assets/sSurya.webp`}
+                src="/assets/sSurya.webp"
                 alt=""
                 className=" opacity-0 transition-all delay-100 duration-[1500ms] ease-in-out hover:opacity-100 group-hover:opacity-100"
               />
@@ -36,7 +36,7 @@ export default function AboutUs() {
           <div className="group mx-auto mt-auto mb-6 flex h-full flex-col">
             <div className="mt-auto mb-6 gap-6">
               <img
-                src={`${process.env.REACT_APP_STORAGE}assets/sSasi.webp`}
+                src="/assets/sSasi.webp"
                 alt=""
                 className=" opacity-0 transition-all delay-100 duration-[1500ms] ease-in-out hover:opacity-100 group-hover:opacity-100"
               />
@@ -49,7 +49,7 @@ export default function AboutUs() {
           <div className="group mx-auto mt-auto mb-6 flex h-full flex-col">
             <div className="mt-auto mb-6 gap-6">
               <img
-                src={`${process.env.REACT_APP_STORAGE}assets/sHarsha.webp`}
+                src="/assets/sHarsha.webp"
                 alt=""
                 className=" opacity-0 transition-all delay-100 duration-[1500ms] ease-in-out hover:opacity-100 group-hover:opacity-100"
               />
@@ -61,14 +61,14 @@ export default function AboutUs() {
         </div>
         <div className="flex h-full bg-[#85D876] md:flex-col md:justify-end mdm:h-fit mdm:max-h-screen">
           <img
-            src={`${process.env.REACT_APP_STORAGE}assets/surya.webp`}
+            src="/assets/surya.webp"
             className="mt-auto w-full md:ml-auto mdm:mr-auto  mdm:max-h-screen mdm:w-1/2 "
             draggable="false"
             alt="Surya Teja Reddy @surya-teja-222 https://github.com/surya-teja-222"
           />
           <div className="flex w-1/2 flex-col justify-center gap-4 md:hidden">
             <img
-              src={`${process.env.REACT_APP_STORAGE}assets/sSuryaGreen.webp`}
+              src="/assets/sSuryaGreen.webp"
               alt=""
               className="transition-all delay-100 duration-[1500ms] ease-in-out"
             />
@@ -83,7 +83,7 @@ export default function AboutUs() {
                 className="group relative"
               >
                 <img
-                  src={`${process.env.REACT_APP_STORAGE}assets/github.webp`}
+                  src="/assets/github.webp"
                   alt="Github of Surya https://github.com/surya-teja-222"
                   className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
                   loading="lazy"
@@ -94,7 +94,7 @@ export default function AboutUs() {
                 className="group relative"
               >
                 <img
-                  src={`${process.env.REACT_APP_STORAGE}assets/linkedin.webp`}
+                  src="/assets/linkedin.webp"
                   alt="LinkedIn of Surya https://linkedin.com/in/suryateja222"
                   className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
                   loading="lazy"
@@ -105,7 +105,7 @@ export default function AboutUs() {
                 className="group relative"
               >
                 <img
-                  src={`${process.env.REACT_APP_STORAGE}assets/instagram.webp`}
+                  src="/assets/instagram.webp"
                   alt="Instagram of Surya https://instagram/surya_teja_222"
                   className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
                   loading="lazy"
@@ -113,7 +113,7 @@ export default function AboutUs() {
               </a>
               <a href="https://t.me/surya_teja_222" className="group relative">
                 <img
-                  src={`${process.env.REACT_APP_STORAGE}assets/telegram.webp`}
+                  src="/assets/telegram.webp"
                   alt="Telegram of Surya @surya_teja_222"
                   className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
                   loading="lazy"
@@ -124,14 +124,14 @@ export default function AboutUs() {
         </div>
         <div className="flex h-full justify-end bg-[#75D0D7] md:flex-col mdm:h-fit mdm:max-h-screen mdm:flex-row-reverse">
           <img
-            src={`${process.env.REACT_APP_STORAGE}assets/sasi.webp`}
+            src="/assets/sasi.webp"
             className="mt-auto w-full  md:mx-auto mdm:ml-auto  mdm:max-h-screen mdm:w-1/2 "
             draggable="false"
             alt="Sasi Vatsal @sasivatsal7122 https://github.com/sasivatsal7122"
           />
           <div className="flex w-1/2 flex-col justify-center gap-4 md:hidden">
             <img
-              src={`${process.env.REACT_APP_STORAGE}assets/sSasi.webp`}
+              src="/assets/sSasi.webp"
               alt=""
               className="transition-all delay-100 duration-[1500ms] ease-in-out"
             />
@@ -146,7 +146,7 @@ export default function AboutUs() {
                 className="group relative"
               >
                 <img
-                  src={`${process.env.REACT_APP_STORAGE}assets/github.webp`}
+                  src="/assets/github.webp"
                   alt="Github of Sasi https://github.com/sasivatsal7122"
                   className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
                   loading="lazy"
@@ -157,7 +157,7 @@ export default function AboutUs() {
                 className="group relative"
               >
                 <img
-                  src={`${process.env.REACT_APP_STORAGE}assets/linkedin.webp`}
+                  src="/assets/linkedin.webp"
                   alt="Instagram of Sasi https://www.linkedin.com/in/sasi-vatsal-606195215"
                   className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
                   loading="lazy"
@@ -168,7 +168,7 @@ export default function AboutUs() {
                 className="group relative"
               >
                 <img
-                  src={`${process.env.REACT_APP_STORAGE}assets/instagram.webp`}
+                  src="/assets/instagram.webp"
                   alt="Telegram of Sasi https://www.instagram.com/sasivatsal/"
                   className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
                   loading="lazy"
@@ -176,7 +176,7 @@ export default function AboutUs() {
               </a>
               <a href="https://t.me/Sasivatsal" className="group relative">
                 <img
-                  src={`${process.env.REACT_APP_STORAGE}assets/telegram.webp`}
+                  src="/assets/telegram.webp"
                   alt="Github of Sasi https://t.me/Sasivatsal"
                   className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
                   loading="lazy"
@@ -187,14 +187,14 @@ export default function AboutUs() {
         </div>
         <div className="flex h-full justify-end bg-[#DE8B95] md:flex-col mdm:h-fit mdm:max-h-screen">
           <img
-            src={`${process.env.REACT_APP_STORAGE}assets/harsha.webp`}
+            src="/assets/harsha.webp"
             className="mr-auto   w-full mdm:max-h-screen  mdm:w-1/2 "
             draggable="false"
             alt="Harsha @HarshaMalla https://github.com/HarshaMalla"
           />
           <div className="flex w-1/2 flex-col justify-center gap-4 md:hidden">
             <img
-              src={`${process.env.REACT_APP_STORAGE}assets/sHarsha.webp`}
+              src="/assets/sHarsha.webp"
               alt=""
               className="transition-all delay-100 duration-[1500ms] ease-in-out"
             />
@@ -208,7 +208,7 @@ export default function AboutUs() {
                 className="group relative"
               >
                 <img
-                  src={`${process.env.REACT_APP_STORAGE}assets/github.webp`}
+                  src="/assets/github.webp"
                   alt="Github of Harsha https://github.com/HarshaMalla"
                   className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
                   loading="lazy"
@@ -219,7 +219,7 @@ export default function AboutUs() {
                 className="group relative"
               >
                 <img
-                  src={`${process.env.REACT_APP_STORAGE}assets/linkedin.webp`}
+                  src="/assets/linkedin.webp"
                   alt="LinkedIn of Harsha https://www.linkedin.com/in/sri-harsha-malla-38023620a"
                   className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
                   loading="lazy"
@@ -230,7 +230,7 @@ export default function AboutUs() {
                 className="group relative"
               >
                 <img
-                  src={`${process.env.REACT_APP_STORAGE}assets/instagram.webp`}
+                  src="/assets/instagram.webp"
                   alt="Instagram of Harsha https://www.instagram.com/harshaa.exe/"
                   className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
                   loading="lazy"
@@ -238,7 +238,7 @@ export default function AboutUs() {
               </a>
               <a href="https://t.me/Sriharshamalla" className="group relative">
                 <img
-                  src={`${process.env.REACT_APP_STORAGE}assets/telegram.webp`}
+                  src="/assets/telegram.webp"
                   alt="Telegram of Harsha https://t.me/Sriharshamalla"
                   className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
                   loading="lazy"
@@ -255,7 +255,7 @@ export default function AboutUs() {
             className="group relative"
           >
             <img
-              src={`${process.env.REACT_APP_STORAGE}assets/github.webp`}
+              src="/assets/github.webp"
               alt="Github of Surya https://github.com/surya-teja-222"
               className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
               loading="lazy"
@@ -284,7 +284,7 @@ export default function AboutUs() {
             className="group relative"
           >
             <img
-              src={`${process.env.REACT_APP_STORAGE}assets/linkedin.webp`}
+              src="/assets/linkedin.webp"
               alt="LinkedIn of Surya https://linkedin.com/in/suryateja222"
               className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
               loading="lazy"
@@ -310,7 +310,7 @@ export default function AboutUs() {
           </a>
           <a href="https://instagram/surya_teja_222" className="group relative">
             <img
-              src={`${process.env.REACT_APP_STORAGE}assets/instagram.webp`}
+              src="/assets/instagram.webp"
               alt="Instagram of Surya https://instagram/surya_teja_222"
               className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
               loading="lazy"
@@ -336,7 +336,7 @@ export default function AboutUs() {
           </a>
           <a href="https://t.me/surya_teja_222" className="group relative">
             <img
-              src={`${process.env.REACT_APP_STORAGE}assets/telegram.webp`}
+              src="/assets/telegram.webp"
               alt="Telegram of Surya @surya_teja_222"
               className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
               loading="lazy"
@@ -367,7 +367,7 @@ export default function AboutUs() {
             className="group relative"
           >
             <img
-              src={`${process.env.REACT_APP_STORAGE}assets/github.webp`}
+              src="/assets/github.webp"
               alt="Github of Sasi https://github.com/sasivatsal7122"
               className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
               loading="lazy"
@@ -396,7 +396,7 @@ export default function AboutUs() {
             className="group relative"
           >
             <img
-              src={`${process.env.REACT_APP_STORAGE}assets/linkedin.webp`}
+              src="/assets/linkedin.webp"
               alt="Instagram of Sasi https://www.linkedin.com/in/sasi-vatsal-606195215"
               className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
               loading="lazy"
@@ -425,7 +425,7 @@ export default function AboutUs() {
             className="group relative"
           >
             <img
-              src={`${process.env.REACT_APP_STORAGE}assets/instagram.webp`}
+              src="/assets/instagram.webp"
               alt="Telegram of Sasi https://www.instagram.com/sasivatsal/"
               className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
               loading="lazy"
@@ -451,7 +451,7 @@ export default function AboutUs() {
           </a>
           <a href="https://t.me/Sasivatsal" className="group relative">
             <img
-              src={`${process.env.REACT_APP_STORAGE}assets/telegram.webp`}
+              src="/assets/telegram.webp"
               alt="Github of Sasi https://t.me/Sasivatsal"
               className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
               loading="lazy"
@@ -479,7 +479,7 @@ export default function AboutUs() {
         <div className="m-auto flex gap-6 text-center">
           <a href="https://github.com/HarshaMalla" className="group relative">
             <img
-              src={`${process.env.REACT_APP_STORAGE}assets/github.webp`}
+              src="/assets/github.webp"
               alt="Github of Harsha https://github.com/HarshaMalla"
               className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
               loading="lazy"
@@ -508,7 +508,7 @@ export default function AboutUs() {
             className="group relative"
           >
             <img
-              src={`${process.env.REACT_APP_STORAGE}assets/linkedin.webp`}
+              src="/assets/linkedin.webp"
               alt="LinkedIn of Harsha https://www.linkedin.com/in/sri-harsha-malla-38023620a"
               className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
               loading="lazy"
@@ -537,7 +537,7 @@ export default function AboutUs() {
             className="group relative"
           >
             <img
-              src={`${process.env.REACT_APP_STORAGE}assets/instagram.webp`}
+              src="/assets/instagram.webp"
               alt="Instagram of Harsha https://www.instagram.com/harshaa.exe/"
               className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
               loading="lazy"
@@ -563,7 +563,7 @@ export default function AboutUs() {
           </a>
           <a href="https://t.me/Sriharshamalla" className="group relative">
             <img
-              src={`${process.env.REACT_APP_STORAGE}assets/telegram.webp`}
+              src="/assets/telegram.webp"
               alt="Telegram of Harsha https://t.me/Sriharshamalla"
               className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
               loading="lazy"

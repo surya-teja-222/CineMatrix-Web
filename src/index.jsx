@@ -1,15 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from 'react-dom/client';
 
-import "./index.css";
-import BaseApp from "./BaseApp";
-
-// Google Analytics
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getPerformance } from "firebase/performance";
 
-require("firebase/app-check");
+import BaseApp from "./BaseApp";
+import "./index.css";
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_AUTH,
@@ -26,11 +23,7 @@ getAnalytics(app);
 getPerformance(app);
 
 
+const container = document.getElementById("root");
+const root = createRoot(container);
 
-
-ReactDOM.render(
-    <React.StrictMode>
-        <BaseApp />
-    </React.StrictMode>,
-    document.getElementById("root")
-);
+root.render(<BaseApp />);

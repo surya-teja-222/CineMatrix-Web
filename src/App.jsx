@@ -219,21 +219,21 @@ function App() {
 		<div className="cursor-white">
 			<div className="absolute -z-50 h-screen w-full overflow-x-hidden">
 				<img
-					src={`${process.env.REACT_APP_STORAGE}bg.webp`}
+					src="/assets/bg.webp"
 					alt=""
 					className="h-full w-full"
 					draggable="false"
 				/>
 
 				<img
-					src={`${process.env.REACT_APP_STORAGE}assets/landing-bottom-desktop.webp`}
+					src="/assets/landing-bottom-desktop.webp"
 					className="bottom_desktop absolute bottom-0 z-[90] w-full transition-all duration-1000 ease-in-out mdm:hidden"
 					draggable="false"
 					alt=""
 					id="bottom_desktop"
 				/>
 				<img
-					src={`${process.env.REACT_APP_STORAGE}assets/landing-bottom-mobile.webp`}
+					src="/assets/landing-bottom-mobile.webp"
 					className="bottom_desktop absolute bottom-0 z-[90] w-full transition-all duration-1000 ease-in-out md:hidden"
 					draggable="false"
 					alt=""
@@ -245,7 +245,7 @@ function App() {
 				<header>
 					<div className="flex h-[15%] w-full justify-between py-4 md:px-16 mdm:px-2">
 						<img
-							src={`${process.env.REACT_APP_STORAGE}assets/logo/desktop.webp`}
+							src="/assets/logo/desktop.webp"
 							alt="Logo CInematrixs"
 							draggable="false"
 							className="unselectable my-auto md:h-[67px]  md:w-[286px] mdm:h-9 mdm:w-fit"
@@ -389,8 +389,8 @@ function App() {
 					id="hero_container"
 				>
 					<img
-						src={`${process.env.REACT_APP_STORAGE}testh.svg`}
-						alt=""
+						src="heroImg.svg"
+						alt="Reload Bro"
 						className="unselectable m-auto h-1/2 w-fit"
 					/>
 					<div className="flex w-full justify-center">
@@ -428,7 +428,7 @@ function App() {
 						Features
 					</h1>
 					<img
-						src={`${process.env.REACT_APP_STORAGE}assets/binge.webp`}
+						src="/assets/binge.webp"
 						draggable="false"
 						className="requires-animation mt-auto w-3/4 mdm:mx-auto mdm:w-1/3"
 						alt=""

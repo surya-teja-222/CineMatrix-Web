@@ -156,36 +156,14 @@ body {
   overflow: hidden;
   transition: max-height 1s ease-in-out;
   height: auto;
-  /* max-height:600px;  */
 }
 
-/* .cus {
-  background-color: #7895c0;
-  background-image: linear-gradient(315deg, #33517e 0%, #5c7396 74%);
-} */
-
-/* .cus {
-  background-color: #000000;
-  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
-} */
 
 .cus {
-  /* background-image: url(./assets//hm/123.jpg); */
-  /* opacity: 0.5; */
-  /* filter: blur(2px); */
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url(./assets/hm/123.gif);
   background-size: auto;
 }
-
-/* .hmm {
-  background: rgba(30, 14, 14, 0.4);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-} */
 
 @supports (backdrop-filter: blur(16px)) {
   .hmm {
@@ -197,16 +175,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.18);
   }
 }
-
-/* .hmm {
-  backdrop-filter: blur(6px) saturate(190%);
-  -webkit-backdrop-filter: blur(6px) saturate(190%);
-  background-color: rgba(27, 6, 6, 0.61);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
-} */
-
-/* on hover over surya-img , make .surya visible */
 
 .l-bg {
   background: linear-gradient(
