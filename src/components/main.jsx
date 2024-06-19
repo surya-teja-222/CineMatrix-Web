@@ -14,6 +14,7 @@ function Main({ searchTerm }) {
 	const [knn, setKnn] = useState("");
 	const [svd, setSvd] = useState("");
 	const [item, setItem] = useState("");
+
 	useEffect(() => {
 		setSearch(searchTerm);
 	}, [searchTerm]);
@@ -90,9 +91,9 @@ function Main({ searchTerm }) {
 							onClick={() => {
 								if (
 									document.getElementById("input").value !==
-										"" &&
+									"" &&
 									document.getElementById("input").value !==
-										search
+									search
 								) {
 									setSearch(
 										document.getElementById("input").value
@@ -134,8 +135,7 @@ function Main({ searchTerm }) {
 		if (
 			data !== "" &&
 			typeof data !== "undefined" &&
-			data !== null &&
-			data !== {}
+			data !== null
 		) {
 			var d = JSON.parse(data);
 			// console.log(d);

@@ -2,7 +2,7 @@ export default async function postContact(email, message) {
     const date = new Date();
     const response = await fetch('https://api.ipify.org/?format=json');
     const ip = await response.json();
-    fetch(process.env.REACT_APP_CONTACT_URL, {
+    return fetch(process.env.REACT_APP_CONTACT_URL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
