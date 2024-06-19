@@ -3,7 +3,6 @@ import posterError from "../assets/postererror.webp";
 import React from "react";
 
 export default function DataItem({ mName, i, mIndex }) {
-	// var genere, title, date, rating, img;
 	const [genere, setGenere] = useState(null);
 	const [title, setTitle] = useState(null);
 	const [date, setDate] = useState(null);
@@ -11,7 +10,6 @@ export default function DataItem({ mName, i, mIndex }) {
 	const [img, setImg] = useState(null);
 
 	useEffect(() => {
-		// reset all the data
 		setGenere(null);
 		setTitle(null);
 		setDate(null);
@@ -23,28 +21,33 @@ export default function DataItem({ mName, i, mIndex }) {
 		"https://api.themoviedb.org/3/movie/" +
 		mIndex +
 		"?api_key=8265bd1679663a7ea12ac168da84d2e8&language=en-US";
-	fetch(uri, {
-		method: "GET",
-		headers: {
-			"Content-Type": "application/json",
-		},
-	})
-		.then((res) => res.json())
-		.then((data) => {
-			// if status is 200
-			if (data.status_code !== 404) {
-				const genres = data.genres;
-				try {
-					setGenere(genres.map((genre) => genre.name).join(", "));
-				} catch (e) {
-					setGenere(genres[0].name);
-				}
-				setTitle(data.title);
-				setDate(data.release_date);
-				setRating(data.vote_average);
-				setImg("https://image.tmdb.org/t/p/w500" + data.poster_path);
-			}
-		});
+
+	useEffect(() => {
+		if (parseInt(mIndex) !== -1) {
+			fetch(uri, {
+				method: "GET",
+				headers: {
+					"Content-Type": "application/json",
+				},
+			})
+				.then((res) => res.json())
+				.then((data) => {
+					// if status is 200
+					if (data.status_code !== 404) {
+						const genres = data.genres;
+						try {
+							setGenere(genres.map((genre) => genre.name).join(", "));
+						} catch (e) {
+							setGenere(genres[0].name);
+						}
+						setTitle(data.title);
+						setDate(data.release_date);
+						setRating(data.vote_average);
+						setImg("https://image.tmdb.org/t/p/w500" + data.poster_path);
+					}
+				});
+		}
+	}, [mIndex, uri])
 
 	return (
 		<>
@@ -124,9 +127,3 @@ const err = (mName) => {
 		</div>
 	);
 };
-
-// DataItem.propTypes = {
-//   mName: PropTypes.string,
-//   i: PropTypes.number,
-//   mIndex: PropTypes.number,
-// };

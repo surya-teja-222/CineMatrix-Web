@@ -16,20 +16,19 @@ export default function ContactUS() {
   const [messageText, setMessageText] = useState("");
   const [messageStyle, setMessageStyle] = useState({});
 
-  const handleSendClick = useCallback(() => {
+  const handleSendClick = useCallback(async () => {
     setMessageText("");
 
     if (email.length === 0 || message.length === 0) {
       setMessageText("Please fill all the fields");
       setMessageStyle(DANGER_STYLE);
     } else {
-      contact(email, message);
+      await contact(email, message);
       setMessageText("Successfully sent your message!");
       setMessageStyle(SUCCESS_STYLE);
       setTimeout(() => {
         window.scrollTo(0, 0);
-        window.location.reload();
-      }, 2000);
+      }, 3000);
     }
   }, [email, message])
 

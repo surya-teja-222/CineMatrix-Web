@@ -38,6 +38,9 @@ dependencies:
   typescript:
     specifier: '>=3.2.1 <4.0.0 || >=4.0.0'
     version: 4.9.5
+  use-debounce:
+    specifier: ^10.0.1
+    version: 10.0.1(react@18.3.1)
   web-vitals:
     specifier: ^2.1.0
     version: 2.1.4
@@ -10042,6 +10045,15 @@ packages:
     dependencies:
       querystringify: 2.2.0
       requires-port: 1.0.0
+    dev: false
+
+  /use-debounce@10.0.1(react@18.3.1):
+    resolution: {integrity: sha512-0uUXjOfm44e6z4LZ/woZvkM8FwV1wiuoB6xnrrOmeAEjRDDzTLQNRFtYHvqUsJdrz1X37j0rVGIVp144GLHGKg==}
+    engines: {node: '>= 16.0.0'}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      react: 18.3.1
     dev: false
 
   /util-deprecate@1.0.2:
