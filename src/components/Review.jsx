@@ -210,7 +210,7 @@ export default function Review({ searchTerm }) {
 					</div>
 					<div className="requires-animation group relative flex w-[25%] min-w-[260px] flex-col gap-4 self-center rounded-2xl bg-[#CD1818] p-6 text-white shadow-none shadow-slate-700 transition-all duration-500 ease-in-out hover:bg-[#ff0000] hover:shadow-2xl">
 						<img
-							src={`${process.env.REACT_APP_STORAGE}assets/tree.webp`}
+							src="/assets/tree.webp"
 							alt=""
 							className="absolute  right-0 -top-16 w-[120px] transition-all duration-500 ease-in-out group-hover:scale-[1.3]"
 							draggable="false"

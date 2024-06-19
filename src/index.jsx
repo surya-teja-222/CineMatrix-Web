@@ -1,17 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from 'react-dom/client';
 
-import "./index.css";
-import App from "./App";
-
-import Lenis from '@studio-freight/lenis'
-
-// GOogle Analytics
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getPerformance } from "firebase/performance";
 
-require("firebase/app-check");
+import BaseApp from "./BaseApp";
+import "./index.css";
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_AUTH,
@@ -23,35 +18,14 @@ const firebaseConfig = {
     measurementId: "G-GRNH879JLF",
 };
 
-const app = initializeApp(firebaseConfig);
-getAnalytics(app);
-getPerformance(app);
-
-const lenis = new Lenis({
-	duration: 1.5,
-	easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
-	direction: "vertical", // vertical, horizontal
-	gestureDirection: "vertical", // vertical, horizontal, both
-	smooth: true,
-	mouseMultiplier: 1.2,
-	smoothTouch: true,
-	touchMultiplier: 2,
-	infinite: false,
-});
-
-
-
-function raf(time) {
-	lenis.raf(time);
-	requestAnimationFrame(raf);
+if (process.env.NODE_ENV === "production") {
+    const app = initializeApp(firebaseConfig);
+    getAnalytics(app);
+    getPerformance(app);
 }
 
-requestAnimationFrame(raf);
 
+const container = document.getElementById("root");
+const root = createRoot(container);
 
-ReactDOM.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>,
-    document.getElementById("root")
-);
+root.render(<BaseApp />);

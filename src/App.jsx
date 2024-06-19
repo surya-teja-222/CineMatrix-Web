@@ -14,7 +14,7 @@ import Main from "./components/main";
 import About from "./components/aboutUs";
 
 // methods
-import fetchh from "./methods/fetchh";
+import fetchData from "./methods/fetchData";
 
 function App() {
 	// Set search term of page
@@ -34,7 +34,7 @@ function App() {
 					document
 						.getElementById("bottom_mobile")
 						.classList.add("opacity-0");
-					var k = await fetchh(e.target.value);
+					var k = await fetchData(e.target.value);
 					if (k !== suggestions && k.length > 0) {
 						setSuggestions(k);
 					}
@@ -60,7 +60,7 @@ function App() {
 				}
 			});
 		// @ts-ignore
-	}, []);
+	}, [suggestions]);
 
 	// Animations
 	useEffect(() => {
@@ -125,26 +125,115 @@ function App() {
 		});
 	}, []);
 
+	function setInner(suggestions) {
+		var array = [];
+		for (var i = 0; i < suggestions.length; i++) {
+			if (i === 0) {
+				array.push(
+					<div
+						key={i}
+						role={"list"}
+						className="terms w-full cursor-pointer rounded-t-md bg-white text-center font-Poppins font-semibold text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
+						onClick={(e) => {
+							setSearchTerm(e.target.innerText);
+							document
+								.querySelector("#main_search")
+								.scrollIntoView({
+									behavior: "smooth",
+								});
+							document
+								.getElementById("bottom_desktop")
+								.classList.remove("opacity-0");
+							document
+								.getElementById("bottom_mobile")
+								.classList.remove("opacity-0");
+						}}
+					>
+						{suggestions[i]}
+					</div>
+				);
+			} else if (i === suggestions.length - 1) {
+				array.push(
+					<div
+						role={"list"}
+						key={i}
+						className="terms w-full cursor-pointer rounded-b-md bg-white text-center font-Poppins font-semibold capitalize text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
+						onClick={(e) => {
+							setSearchTerm(e.target.innerText);
+							document
+								.querySelector("#main_search")
+								.scrollIntoView({
+									behavior: "smooth",
+								});
+							document
+								.getElementById("bottom_desktop")
+								.classList.remove("opacity-0");
+							document
+								.getElementById("bottom_mobile")
+								.classList.remove("opacity-0");
+						}}
+					>
+						{suggestions[i]}
+					</div>
+				);
+			} else {
+				array.push(
+					<div
+						role={"list"}
+						key={i}
+						className="terms w-full cursor-pointer bg-white text-center font-Poppins font-semibold  capitalize text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
+						onClick={(e) => {
+							setSearchTerm(e.target.innerText);
+							document
+								.querySelector("#main_search")
+								.scrollIntoView({
+									behavior: "smooth",
+								});
+							document
+								.getElementById("bottom_desktop")
+								.classList.remove("opacity-0");
+							document
+								.getElementById("bottom_mobile")
+								.classList.remove("opacity-0");
+						}}
+					>
+						{suggestions[i]}
+					</div>
+				);
+			}
+		}
+		if (array.length === 0) {
+			array.push(
+				<div
+					key={i}
+					className="terms w-full rounded-md bg-white  text-center font-Poppins font-semibold capitalize text-black transition-colors duration-100 ease-linear "
+				>
+					No matching results found...
+				</div>
+			);
+		}
+		return array;
+	}
+
 	return (
 		<div className="cursor-white">
 			<div className="absolute -z-50 h-screen w-full overflow-x-hidden">
 				<img
-					// src={`https://asia-south1-cinematrix-144.cloudfunctions.net/objects/cinematrix/head`}
-					src={`${process.env.REACT_APP_STORAGE}bg.webp`}
+					src="/assets/bg.webp"
 					alt=""
 					className="h-full w-full"
 					draggable="false"
 				/>
 
 				<img
-					src={`${process.env.REACT_APP_STORAGE}assets/landing-bottom-desktop.webp`}
+					src="/assets/landing-bottom-desktop.webp"
 					className="bottom_desktop absolute bottom-0 z-[90] w-full transition-all duration-1000 ease-in-out mdm:hidden"
 					draggable="false"
 					alt=""
 					id="bottom_desktop"
 				/>
 				<img
-					src={`${process.env.REACT_APP_STORAGE}assets/landing-bottom-mobile.webp`}
+					src="/assets/landing-bottom-mobile.webp"
 					className="bottom_desktop absolute bottom-0 z-[90] w-full transition-all duration-1000 ease-in-out md:hidden"
 					draggable="false"
 					alt=""
@@ -156,7 +245,7 @@ function App() {
 				<header>
 					<div className="flex h-[15%] w-full justify-between py-4 md:px-16 mdm:px-2">
 						<img
-							src={`${process.env.REACT_APP_STORAGE}assets/logo/desktop.webp`}
+							src="/assets/logo/desktop.webp"
 							alt="Logo CInematrixs"
 							draggable="false"
 							className="unselectable my-auto md:h-[67px]  md:w-[286px] mdm:h-9 mdm:w-fit"
@@ -300,8 +389,8 @@ function App() {
 					id="hero_container"
 				>
 					<img
-						src={`${process.env.REACT_APP_STORAGE}testh.svg`}
-						alt=""
+						src="/assets/heroImg.svg"
+						alt="Reload Bro"
 						className="unselectable m-auto h-1/2 w-fit"
 					/>
 					<div className="flex w-full justify-center">
@@ -339,7 +428,7 @@ function App() {
 						Features
 					</h1>
 					<img
-						src={`${process.env.REACT_APP_STORAGE}assets/binge.webp`}
+						src="/assets/binge.webp"
 						draggable="false"
 						className="requires-animation mt-auto w-3/4 mdm:mx-auto mdm:w-1/3"
 						alt=""
@@ -426,106 +515,6 @@ function App() {
 			</Suspense>
 		</div>
 	);
-
-	function setInner(suggestions) {
-		var array = [];
-		for (var i = 0; i < suggestions.length; i++) {
-			if (i === 0) {
-				array.push(
-					<div
-						key={i}
-						role={"list"}
-						className="terms w-full cursor-pointer rounded-t-md bg-white text-center font-Poppins font-semibold text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
-						onClick={(e) => {
-							setSearchTerm(e.target.innerText);
-							document
-								.querySelector("#main_search")
-								.scrollIntoView({
-									behavior: "smooth",
-								});
-							document
-								.getElementById("bottom_desktop")
-								.classList.remove("opacity-0");
-							document
-								.getElementById("bottom_mobile")
-								.classList.remove("opacity-0");
-						}}
-					>
-						{suggestions[i]}
-					</div>
-				);
-			} else if (i === suggestions.length - 1) {
-				array.push(
-					<div
-						role={"list"}
-						key={i}
-						className="terms w-full cursor-pointer rounded-b-md bg-white text-center font-Poppins font-semibold capitalize text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
-						onClick={(e) => {
-							setSearchTerm(e.target.innerText);
-							document
-								.querySelector("#main_search")
-								.scrollIntoView({
-									behavior: "smooth",
-								});
-							document
-								.getElementById("bottom_desktop")
-								.classList.remove("opacity-0");
-							document
-								.getElementById("bottom_mobile")
-								.classList.remove("opacity-0");
-						}}
-					>
-						{suggestions[i]}
-					</div>
-				);
-			} else {
-				array.push(
-					<div
-						role={"list"}
-						key={i}
-						className="terms w-full cursor-pointer bg-white text-center font-Poppins font-semibold  capitalize text-black transition-colors duration-100 ease-linear hover:bg-gray-500"
-						onClick={(e) => {
-							setSearchTerm(e.target.innerText);
-							document
-								.querySelector("#main_search")
-								.scrollIntoView({
-									behavior: "smooth",
-								});
-							document
-								.getElementById("bottom_desktop")
-								.classList.remove("opacity-0");
-							document
-								.getElementById("bottom_mobile")
-								.classList.remove("opacity-0");
-						}}
-					>
-						{suggestions[i]}
-					</div>
-				);
-			}
-		}
-		if (array.length === 0) {
-			array.push(
-				<div
-					key={i}
-					className="terms w-full rounded-md bg-white  text-center font-Poppins font-semibold capitalize text-black transition-colors duration-100 ease-linear "
-				>
-					No matching results found...
-				</div>
-			);
-		}
-		return array;
-	}
 }
 
 export default App;
-
-/*
-MAIN PAGE
-FEATURES
-SEARCH PART
-ABOUT US
-RATEUS/CONTACT US
-SUPPORT US
-FOOTER
-*/
