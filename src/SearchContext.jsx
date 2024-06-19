@@ -1,17 +1,21 @@
-
-// todo: do not commit this file
-import react from "react";
+import react, { useState } from "react";
 
 export const SearchContext = react.createContext();
 
 export const SearchProvider = ({ children }) => {
-  const [searchTerm, setSearchTerm] = react.useState("");
-  // store searchTerm: suggestions
-  const [suggestions, setSuggestions] = react.useState({});
+  const [selectedTerm, setSelectedTerm] = useState(null);
 
   return (
-    <SearchContext.Provider value={{ searchTerm, setSearchTerm, suggestions, setSuggestions }}>
+    <SearchContext.Provider value={{ selectedTerm, setSelectedTerm }}>
       {children}
     </SearchContext.Provider>
   );
+}
+
+export const useSearch = () => {
+  const context = react.useContext(SearchContext);
+  if (context === undefined) {
+    throw new Error("useSearch must be used within a SearchProvider");
+  }
+  return context;
 }

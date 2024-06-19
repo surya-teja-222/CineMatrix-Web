@@ -3,18 +3,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { useDebounce } from 'use-debounce';
 
-import Main from "./components/main";
 import fetchData from "./methods/fetchData";
 import Header from "./components/Header";
 import AppSubContent from "./AppSubContent";
 import Suggestions from "./components/Suggestions/Suggestions";
+import MoviesSection from "./components/MoviesSection";
 
 function App() {
 	const inputRef = useRef();
 	const [searchTerm, setSearchTerm] = useState("");
 	const [defferedSearchTerm] = useDebounce(searchTerm, 800);
-
-	console.log(defferedSearchTerm);
 
 	const [suggestions, setSuggestions] = useState([]);
 
@@ -145,7 +143,7 @@ function App() {
 						id="suggestions"
 						className="mx-4 flex h-48 max-h-48  w-[40%] flex-col self-center  rounded-lg pt-1 mdm:w-[90%]"
 					>
-						<Suggestions suggestions={suggestions} setSearchTerm={setSearchTerm} />
+						<Suggestions suggestions={suggestions} />
 					</div>
 				</div>
 			</div>
@@ -154,7 +152,8 @@ function App() {
 				fallback={<div id="main_search" className="search "></div>}
 			>
 				<div id="main_search" className="search ">
-					<Main searchTerm={searchTerm} />
+					{/* <Main /> */}
+					<MoviesSection />
 				</div>
 			</Suspense>
 

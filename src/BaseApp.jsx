@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import App from "./App";
 import Lenis from 'lenis';
+import { SearchProvider } from "./SearchContext";
 
 export default function BaseApp() {
 
@@ -26,5 +27,9 @@ export default function BaseApp() {
   }, [])
 
 
-  return <App />;
+  return (
+    <SearchProvider>
+      <App />
+    </SearchProvider>
+  )
 }

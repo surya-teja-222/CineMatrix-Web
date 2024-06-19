@@ -8,58 +8,55 @@ import searchIco from "./../assets/search.png";
 import interest from "./../assets/Based On Your Interests.png";
 import based from "./../assets/peopleWhoLiked.png";
 import loading from "./../assets/loading.gif";
+import { useSearch } from "../SearchContext";
 
-function Main({ searchTerm }) {
-	const [search, setSearch] = useState("");
-	const [knn, setKnn] = useState("");
-	const [svd, setSvd] = useState("");
-	const [item, setItem] = useState("");
-
-	useEffect(() => {
-		setSearch(searchTerm);
-	}, [searchTerm]);
+function Main() {
+	const { selectedTerm } = useSearch();
+	const [knn, setKnn] = useState(null);
+	const [svd, setSvd] = useState(null);
+	const [item, setItem] = useState(null);
 
 	useEffect(() => {
-		// get data, set knn, svd , item
-		const rr = async () => {
-			if (search !== "") {
-				const resItem = new Promise(async (resolve, reject) => {
-					resolve(JSON.stringify(await getData("item", search)));
+		const handleFetch = async () => {
+			if (selectedTerm !== null && selectedTerm?.length > 2) {
+				const resItem = new Promise(async (resolve) => {
+					resolve(JSON.stringify(await getData("item", selectedTerm)));
 				});
 				setItem(JSON.parse(await resItem));
-				const resKnn = new Promise(async (resolve, reject) => {
-					resolve(JSON.stringify(await getData("knn", search)));
+				const resKnn = new Promise(async (resolve) => {
+					resolve(JSON.stringify(await getData("knn", selectedTerm)));
 				});
 				setKnn(JSON.parse(await resKnn));
-				const resSvd = new Promise(async (resolve, reject) => {
-					resolve(JSON.stringify(await getData("svd", search)));
+				const resSvd = new Promise(async (resolve) => {
+					resolve(JSON.stringify(await getData("svd", selectedTerm)));
 				});
 				setSvd(JSON.parse(await resSvd));
 			}
 		};
 
-		rr();
-	}, [search]);
+		handleFetch();
+	}, [selectedTerm]);
 
 	useEffect(() => {
-		if (search) {
-			document.getElementById("input").value = search;
+		if (selectedTerm) {
+			document.getElementById("input").value = selectedTerm;
 		}
 		if (document.getElementById("data-loading")) {
-			document.getElementById("data-loading").classList.remove("hidden");
+			document.getElementById("data-loading")?.classList.remove("hidden");
 		}
-	}, [search]);
+	}, [selectedTerm]);
 
 	useEffect(() => {
-		if (knn !== "" && svd !== "" && item !== "") {
-			document.getElementById("data-loading").classList.add("hidden");
+		if (!knn && !svd && !item) {
+			document.getElementById("data-loading")?.classList.add("hidden");
 		}
-		// if (document.getElementById("data-loading")) {
-		//   document.getElementById("data-loading").classList.toggle("hidden");
-		// }
 	}, [knn, svd, item]);
 
-	if (searchTerm !== "") {
+	if (!selectedTerm) {
+		return null;
+	}
+
+	if (selectedTerm !== null) {
 		return (
 			<div className="cus mb-8 w-full bg-gradient-to-r from-[#3b5dcc]  to-[#D12A1E] pb-5">
 				<div className="flex w-full justify-between p-4 ">
@@ -68,38 +65,11 @@ function Main({ searchTerm }) {
 							id="input"
 							className="h-16  w-[80%] bg-slate-100 p-6 font-Poppins text-xl font-bold capitalize text-slate-600 outline-none"
 							placeholder="Enter a Movie Name to get Recomendations"
-							onKeyUp={(e) => {
-								if (e.keyCode === 13) {
-									if (
-										document.getElementById("input")
-											.value !== "" &&
-										document.getElementById("input")
-											.value !== search
-									) {
-										setSearch(
-											document.getElementById("input")
-												.value
-										);
-									}
-								}
-							}}
 						/>
 						<img
 							src={searchIco}
 							alt="decor"
 							className="my-auto mr-5 h-[28px] w-[28px] scale-[1] cursor-pointer transition-all duration-200 ease-in-out hover:scale-[1.2]"
-							onClick={() => {
-								if (
-									document.getElementById("input").value !==
-									"" &&
-									document.getElementById("input").value !==
-									search
-								) {
-									setSearch(
-										document.getElementById("input").value
-									);
-								}
-							}}
 						/>
 					</div>
 				</div>
@@ -107,7 +77,7 @@ function Main({ searchTerm }) {
 					Generating binge Recomendations for :
 				</h1>
 				<h2 className="cursor-default px-6 pb-6 pt-1 font-Poppins text-base font-semibold capitalize text-slate-100 underline hover:italic">
-					<span id="spanned-movie">{search}</span>
+					<span id="spanned-movie">{selectedTerm}</span>
 				</h2>
 
 				<img
@@ -138,7 +108,6 @@ function Main({ searchTerm }) {
 			data !== null
 		) {
 			var d = JSON.parse(data);
-			// console.log(d);
 			var movies = d.movie;
 			var index = d.title;
 			var returndata = [];
@@ -161,12 +130,11 @@ function Main({ searchTerm }) {
 						i={i}
 						mIndex={index[i]}
 						type={type}
-						key={i}
+						key={movies[i] + i + type}
 					/>
 				);
 			}
-			// return returndata;
-			// return returndata by putting it in a div
+
 			return (
 				<div id={type} className="flex flex-col gap-3">
 					{returndata}

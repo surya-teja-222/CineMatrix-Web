@@ -1,28 +1,24 @@
 export default async function getData(type, searchTerm) {
 	try {
-		const url =
-			process.env.REACT_APP_DATA_BASE_URL +
+		const url = process.env.REACT_APP_DATA_BASE_URL +
 			"/" +
 			type +
 			"/?name=" +
 			searchTerm;
-		const k = await fetch(url, {
+		const res = await fetch(url, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify({
-				name: searchTerm,
-			}),
+			body: JSON.stringify({ name: searchTerm }),
 		});
-		// check status code of response
-		if (k.status === 200) {
-			const data = await k.json();
-			return JSON.stringify(data);
-		} else if (k.status === 500) {
-			return "";
+		if (res.ok) {
+			const data = await res.json();
+			return data;
+		} else {
+			throw new Error("Error");
 		}
 	} catch (error) {
-		return "";
+		return null;
 	}
 }

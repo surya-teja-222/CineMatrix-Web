@@ -1,14 +1,16 @@
 import clsx from 'clsx';
 import { useCallback } from 'react';
+import { useSearch } from '../../SearchContext';
 
 function Suggestion({
   isFirst,
   isLast,
   suggestion,
-  setSearchTerm,
 }) {
+  const { setSelectedTerm } = useSearch();
+
   const handleClick = useCallback((e) => {
-    setSearchTerm(e.target.innerText);
+    setSelectedTerm(suggestion);
     document.querySelector("#main_search").scrollIntoView({
       behavior: "smooth",
     });
@@ -16,7 +18,7 @@ function Suggestion({
       .classList.remove("opacity-0");
     document.getElementById("bottom_mobile")
       .classList.remove("opacity-0");
-  }, [setSearchTerm])
+  }, [setSelectedTerm, suggestion])
   return (
     <div
       role="list"
@@ -32,7 +34,7 @@ function Suggestion({
   )
 }
 
-export default function Suggestions({ suggestions, setSearchTerm }) {
+export default function Suggestions({ suggestions }) {
   if (!suggestions?.length) {
     return (
       <div className="terms w-full rounded-md bg-white  text-center font-Poppins font-semibold capitalize text-black transition-colors duration-100 ease-linear ">
@@ -48,7 +50,6 @@ export default function Suggestions({ suggestions, setSearchTerm }) {
           suggestion={suggestion}
           isLast={i === suggestions.length - 1}
           isFirst={i === 0}
-          setSearchTerm={setSearchTerm}
         />
       ))}
     </div>
