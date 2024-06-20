@@ -32,7 +32,7 @@ export default function ItemBasedData({
     return (
       <>
         {
-          itemData?.movie?.map((m, idx) => {
+          itemData?.movie?.slice(0, 5)?.map((m, idx) => {
             return (
               <DataItem
                 mName={m}

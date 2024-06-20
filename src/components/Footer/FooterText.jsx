@@ -25,9 +25,10 @@ export default function FooterText() {
         </div>
         <div className="flex self-center">
           <p className="unselectable  text-center text-[#827F7F]">
-            Developed by{" "}
+            Developed by
+            {" "}
             <span className={clsx(styles.footerName, "cursor-pointer text-[#FF1516] hover:underline")}>
-              Surya
+              <a href="https://www.suryacodes.tech/">Surya</a>
             </span>{" "}
             and{" "}
             <span className={clsx(styles.footerName, "cursor-pointer text-[#FF1516] hover:underline")}>

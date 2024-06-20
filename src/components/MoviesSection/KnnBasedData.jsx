@@ -39,7 +39,7 @@ export default function KnnBasedData({
           draggable="false"
         />
         {
-          knnData?.movie?.map((m, idx) => {
+          knnData?.movie?.slice(0, 5)?.map((m, idx) => {
             return (
               <DataItem
                 mName={m}

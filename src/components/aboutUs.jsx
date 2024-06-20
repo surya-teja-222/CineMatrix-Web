@@ -111,14 +111,6 @@ export default function AboutUs() {
                   loading="lazy"
                 />
               </a>
-              <a href="https://t.me/surya_teja_222" className="group relative">
-                <img
-                  src="/assets/telegram.webp"
-                  alt="Telegram of Surya @surya_teja_222"
-                  className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
-                  loading="lazy"
-                />
-              </a>
             </div>
           </div>
         </div>
@@ -174,14 +166,6 @@ export default function AboutUs() {
                   loading="lazy"
                 />
               </a>
-              <a href="https://t.me/Sasivatsal" className="group relative">
-                <img
-                  src="/assets/telegram.webp"
-                  alt="Github of Sasi https://t.me/Sasivatsal"
-                  className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
-                  loading="lazy"
-                />
-              </a>
             </div>
           </div>
         </div>
@@ -232,14 +216,6 @@ export default function AboutUs() {
                 <img
                   src="/assets/instagram.webp"
                   alt="Instagram of Harsha https://www.instagram.com/harshaa.exe/"
-                  className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
-                  loading="lazy"
-                />
-              </a>
-              <a href="https://t.me/Sriharshamalla" className="group relative">
-                <img
-                  src="/assets/telegram.webp"
-                  alt="Telegram of Harsha https://t.me/Sriharshamalla"
                   className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
                   loading="lazy"
                 />
@@ -317,32 +293,6 @@ export default function AboutUs() {
             />
             <span className="absolute left-[-60%] top-[-140%] scale-0    text-white opacity-0 group-hover:scale-100 group-hover:opacity-100">
               <p className="rounded-lg bg-black px-4 py-2">Instagram</p>
-              <div className="mx-auto h-4 w-4 ">
-                <svg
-                  width="16"
-                  height="8"
-                  viewBox="0 0 16 8"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14.5 0.5L8.5 7L2 0.5H14.5Z"
-                    fill="black"
-                    stroke="black"
-                  />
-                </svg>
-              </div>
-            </span>
-          </a>
-          <a href="https://t.me/surya_teja_222" className="group relative">
-            <img
-              src="/assets/telegram.webp"
-              alt="Telegram of Surya @surya_teja_222"
-              className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
-              loading="lazy"
-            />
-            <span className="absolute left-[-60%] top-[-140%] scale-0    text-white opacity-0 group-hover:scale-100 group-hover:opacity-100">
-              <p className="rounded-lg bg-black px-4 py-2">Telegram</p>
               <div className="mx-auto h-4 w-4 ">
                 <svg
                   width="16"
@@ -449,32 +399,6 @@ export default function AboutUs() {
               </div>
             </span>
           </a>
-          <a href="https://t.me/Sasivatsal" className="group relative">
-            <img
-              src="/assets/telegram.webp"
-              alt="Github of Sasi https://t.me/Sasivatsal"
-              className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
-              loading="lazy"
-            />
-            <span className="absolute left-[-60%] top-[-140%] scale-0    text-white opacity-0 group-hover:scale-100 group-hover:opacity-100">
-              <p className="rounded-lg bg-black px-4 py-2">Telegram</p>
-              <div className="mx-auto h-4 w-4 ">
-                <svg
-                  width="16"
-                  height="8"
-                  viewBox="0 0 16 8"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14.5 0.5L8.5 7L2 0.5H14.5Z"
-                    fill="black"
-                    stroke="black"
-                  />
-                </svg>
-              </div>
-            </span>
-          </a>
         </div>
         <div className="m-auto flex gap-6 text-center">
           <a href="https://github.com/HarshaMalla" className="group relative">
@@ -544,32 +468,6 @@ export default function AboutUs() {
             />
             <span className="absolute left-[-60%] top-[-140%] scale-0    text-white opacity-0 group-hover:scale-100 group-hover:opacity-100">
               <p className="rounded-lg bg-black px-4 py-2">Instagram</p>
-              <div className="mx-auto h-4 w-4 ">
-                <svg
-                  width="16"
-                  height="8"
-                  viewBox="0 0 16 8"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14.5 0.5L8.5 7L2 0.5H14.5Z"
-                    fill="black"
-                    stroke="black"
-                  />
-                </svg>
-              </div>
-            </span>
-          </a>
-          <a href="https://t.me/Sriharshamalla" className="group relative">
-            <img
-              src="/assets/telegram.webp"
-              alt="Telegram of Harsha https://t.me/Sriharshamalla"
-              className="duration-400 h-10 w-10 scale-[1] rounded-full shadow-xl transition-all ease-in-out hover:scale-[1.1] hover:shadow-2xl"
-              loading="lazy"
-            />
-            <span className="absolute left-[-60%] top-[-125%] scale-0    text-white opacity-0 group-hover:scale-100 group-hover:opacity-100">
-              <p className="rounded-lg bg-black px-4 py-2">Telegram</p>
               <div className="mx-auto h-4 w-4 ">
                 <svg
                   width="16"
