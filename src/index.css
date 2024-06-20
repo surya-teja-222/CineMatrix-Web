@@ -162,7 +162,7 @@ body {
 .cus {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url(./assets/hm/123.gif);
-  background-size: auto;
+  background-size: contain;
 }
 
 @supports (backdrop-filter: blur(16px)) {

@@ -1,4 +1,5 @@
 import React, { useEffect, useState, Suspense, useRef, useCallback } from "react";
+
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { useDebounce } from 'use-debounce';
@@ -111,16 +112,16 @@ function App() {
 					id="bottom_mobile"
 				/>
 			</div>
-			<div className=" z-10 flex h-screen  flex-col   overflow-x-hidden">
+			<div className="z-10 flex h-screen  flex-col   overflow-x-hidden">
 				<Header />
 				<div
-					className="flex h-[60%]  w-full flex-col  overflow-x-clip "
+					className="flex h-[60%] w-full flex-col  overflow-x-clip justify-center"
 					id="hero_container"
 				>
 					<img
 						src="/assets/heroImg.svg"
 						alt="Reload Bro"
-						className="unselectable m-auto h-1/2 w-fit"
+						className="unselectable mx-auto h-1/2 w-fit"
 					/>
 					<div className="flex w-full justify-center">
 						<input

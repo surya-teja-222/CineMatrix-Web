@@ -1,6 +1,4 @@
-import React from "react";
-
-import { useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 import searchIco from "./../../assets/search.png";
 import interest from "./../../assets/Based On Your Interests.png";
@@ -8,6 +6,7 @@ import { useSearch } from "../../SearchContext";
 import LoadingMovies from "./LoadingMovies";
 import KnnBasedData from "./KnnBasedData";
 import ItemBasedData from "./ItemBasedData";
+import useQueryParams from "../../hooks/useQueryParams";
 
 const LOADING_INITIAL_STATE = {
   isItemBasedLoading: false,
@@ -16,12 +15,24 @@ const LOADING_INITIAL_STATE = {
 };
 
 function MoviesSection() {
-  const { selectedTerm } = useSearch();
+  const ref = useRef();
+  const { selectedTerm, setSelectedTerm } = useSearch();
   const [loadingState, setLoadingState] = useState(LOADING_INITIAL_STATE);
 
+  const { searchTerm } = useQueryParams();
   const isDataLoading = Object.values(loadingState).some(
     (isLoading) => isLoading
   );
+
+  useEffect(() => {
+    let timeout;
+    if (searchTerm) {
+      setSelectedTerm(searchTerm);
+    }
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [searchTerm, setSelectedTerm]);
 
   useEffect(() => {
     if (selectedTerm) {
@@ -29,6 +40,16 @@ function MoviesSection() {
       document.getElementById("input").value = selectedTerm;
     }
   }, [selectedTerm]);
+
+  useEffect(() => {
+    if (selectedTerm) {
+      setTimeout(() => {
+        document.querySelector("#main_search").scrollIntoView({
+          behavior: "smooth",
+        });
+      }, 1000);
+    }
+  }, [selectedTerm, ref]);
 
   if (!selectedTerm) {
     return null;
@@ -61,6 +82,7 @@ function MoviesSection() {
           alt="Based on user's interest"
           className="unselectable mb-8 max-h-80 "
           draggable="false"
+          id="interest"
         />
 
         <div className="flex w-full flex-col gap-3">
